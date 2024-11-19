@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SanYue</title>
+    <style>
+        :root {
+            --primary-color: #ff9999;
+            --secondary-color: #ff6666;
+            --background-color: #fff5f5;
+            --text-color: #333;
+        }
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--background-color);
+			background-image: url('img/bg2.jpg');
+			background-size: cover;
+            color: var(--text-color);
+        }
+        header {
+
+			background-image: url('img/logo.png');
+			background-repeat: no-repeat;
+			background-position: center;
+            color: white;
+            text-align: center;
+            padding: 1em;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .category-buttons {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1em;
+            margin: 2em 0;
+        }
+        .category-button {
+            background-color: var(--secondary-color);
+            color: white;
+            border: none;
+            padding: 0.5em 1em;
+            font-size: 1em;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s;
+            border-radius: 5px;
+        }
+        .category-button:hover, .category-button.active {
+            background-color: var(--primary-color);
+            transform: translateY(-2px);
+        }
+        .category {
+            margin: 2em;
+
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+            padding: 1em;
+        }
+        h2 {
+            color: var(--secondary-color);
+            border-bottom: 3px solid black;
+            padding-bottom: 0.5em;
+            text-align: center;
+        }
+        .cakes {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2em;
+            padding: 1em;
+        }
+        .cake {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        .cake:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+        }
+        .cake img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        .cake-info {
+            padding: 1em;
+        }
+        .cake h3 {
+            margin: 0.5em 0;
+            color: var(--secondary-color);
+        }
+        .cake p {
+            color: #666;
+            font-size: 0.9em;
+        }
+        @media (max-width: 768px) {
+            .category {
+                margin: 1em;
+            }
+            .cakes {
+                grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1></h1>
+    </header>
+
+    <nav class="category-buttons">
+        <button class="category-button active" data-category="all">全部</button>
+        <button class="category-button" data-category="cake1">蛋糕1</button>
+        <button class="category-button" data-category="cake2">蛋糕2</button>
+        <button class="category-button" data-category="cake3">蛋糕3</button>
+        <button class="category-button" data-category="cake4">蛋糕4</button>
+        <button class="category-button" data-category="cake5">蛋糕5</button>
+    </nav>
+
+    <main id="cakeContainer">
+        <div class="category" data-category="cake1">
+            <h2>蛋糕1</h2>
+            <div class="cakes">
+                <div class="cake">
+                    <img src="img/cake1.jpg?height=200&width=200" alt="蛋糕1-1">
+                    <div class="cake-info">
+                        <h3>蛋糕1-1</h3>
+                        <p>美味可口的蛋糕</p>
+                    </div>
+                </div>
+                <div class="cake">
+                    <img src="img/cake1.jpg?height=200&width=200" alt="蛋糕1-2">
+                    <div class="cake-info">
+                        <h3>蛋糕1-2</h3>
+                        <p>香甜诱人的蛋糕</p>
+                    </div>
+                </div>
+                <div class="cake">
+                    <img src="img/cake1.jpg?height=200&width=200" alt="蛋糕1-3">
+                    <div class="cake-info">
+                        <h3>蛋糕1-3</h3>
+                        <p>口感绝佳的蛋糕</p>
+                    </div>
+                </div>
+                <div class="cake">
+                    <img src="img/cake1.jpg?height=200&width=200" alt="蛋糕1-4">
+                    <div class="cake-info">
+                        <h3>蛋糕1-4</h3>
+                        <p>精致可爱的蛋糕</p>
+                    </div>
+                </div>
+                <div class="cake">
+                    <img src="img/cake1.jpg?height=200&width=200" alt="蛋糕1-5">
+                    <div class="cake-info">
+                        <h3>蛋糕1-5</h3>
+                        <p>独特风味的蛋糕</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="category" data-category="cake2">
+            <h2>蛋糕2</h2>
+            <div class="cakes">
+                <div class="cake">
+                    <img src="img/cake1.jpg?height=200&width=200" alt="蛋糕2-1">
+                    <div class="cake-info">
+                        <h3>蛋糕2-1</h3>
+                        <p>经典口味的蛋糕</p>
+                    </div>
+                </div>
+                <div class="cake">
+                    <img src="img/cake1.jpg?height=200&width=200" alt="蛋糕2-2">
+                    <div class="cake-info">
+                        <h3>蛋糕2-2</h3>
+                        <p>创新设计的蛋糕</p>
+                    </div>
+                </div>
+                <div class="cake">
+                    <img src="img/cake1.jpg?height=200&width=200" alt="蛋糕2-3">
+                    <div class="cake-info">
+                        <h3>蛋糕2-3</h3>
+                        <p>节日特制蛋糕</p>
+                    </div>
+                </div>
+                <div class="cake">
+                    <img src="img/cake1.jpg?height=200&width=200" alt="蛋糕2-4">
+                    <div class="cake-info">
+                        <h3>蛋糕2-4</h3>
+                        <p>健康低糖蛋糕</p>
+                    </div>
+                </div>
+                <div class="cake">
+                    <img src="img/cake1.jpg?height=200&width=200" alt="蛋糕2-5">
+                    <div class="cake-info">
+                        <h3>蛋糕2-5</h3>
+                        <p>巧克力爱好者的选择</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="category" data-category="cake3">
+            <h2>蛋糕3</h2>
+            <div class="cakes">
+                <div class="cake">
+                    <img src="img/cake1.jpg?height=200&width=200" alt="蛋糕3-1">
+                    <div class="cake-info">
+                        <h3>蛋糕3-1</h3>
+                        <p>水果缤纷蛋糕</p>
+                    </div>
+                </div>
+                <div class="cake">
+                    <img src="img/cake1.jpg?height=200&width=200" alt="蛋糕3-2">
+                    <div class="cake-info">
+                        <h3>蛋糕3-2</h3>
+                        <p>奶油花卉蛋糕</p>
+                    </div>
+                </div>
+                <div class="cake">
+                    <img src="img/cake1.jpg?height=200&width=200" alt="蛋糕3-3">
+                    <div class="cake-info">
+                        <h3>蛋糕3-3</h3>
+                        <p>多层婚礼蛋糕</p>
+                    </div>
+                </div>
+                <div class="cake">
+                    <img src="img/cake1.jpg?height=200&width=200" alt="蛋糕3-4">
+                    <div class="cake-info">
+                        <h3>蛋糕3-4</h3>
+                        <p>童趣主题蛋糕</p>
+                    </div>
+                </div>
+                <div class="cake">
+                    <img src="img/cake1.jpg?height=200&width=200" alt="蛋糕3-5">
+                    <div class="cake-info">
+                        <h3>蛋糕3-5</h3>
+                        <p>芝士口味蛋糕</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="category" data-category="cake4">
+            <h2>蛋糕4</h2>
+            <div class="cakes">
+                <div class="cake">
+                    <img src="img/cake1.jpg?height=200&width=200" alt="蛋糕4-1">
+                    <div class="cake-info">
+                        <h3>蛋糕4-1</h3>
+                        <p>抹茶风味蛋糕</p>
+                    </div>
+                </div>
+                <div class="cake">
+                    <img src="img/cake1.jpg?height=200&width=200" alt="蛋糕4-2">
+                    <div class="cake-info">
+                        <h3>蛋糕4-2</h3>
+                        <p>红丝绒蛋糕</p>
+                    </div>
+                </div>
+                <div class="cake">
+                    <img src="img/cake1.jpg?height=200&width=200" alt="蛋糕4-3">
+                    <div class="cake-info">
+                        <h3>蛋糕4-3</h3>
+                        <p>提拉米苏蛋糕</p>
+                    </div>
+                </div>
+                <div class="cake">
+                    <img src="img/cake1.jpg?height=200&width=200" alt="蛋糕4-4">
+                    <div class="cake-info">
+                        <h3>蛋糕4-4</h3>
+                        <p>柠檬清新蛋糕</p>
+                    </div>
+                </div>
+                <div class="cake">
+                    <img src="img/cake1.jpg?height=200&width=200" alt="蛋糕4-5">
+                    <div class="cake-info">
+                        <h3>蛋糕4-5</h3>
+                        <p>榛子巧克力蛋糕</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="category" data-category="cake5">
+            <h2>蛋糕5</h2>
+            <div class="cakes">
+                <div class="cake">
+                    <img src="img/cake1.jpg?height=200&width=200" alt="蛋糕5-1">
+                    <div class="cake-info">
+                        <h3>蛋糕5-1</h3>
+                        <p>冰淇淋蛋糕</p>
+                    </div>
+                </div>
+                <div class="cake">
+                    <img src="img/cake1.jpg?height=200&width=200" alt="蛋糕5-2">
+                    <div class="cake-info">
+                        <h3>蛋糕5-2</h3>
+                        <p>慕斯蛋糕</p>
+                    </div>
+                </div>
+                <div class="cake">
+                    <img src="img/cake1.jpg?height=200&width=200" alt="蛋糕5-3">
+                    <div class="cake-info">
+                        <h3>蛋糕5-3</h3>
+                        <p>裸蛋糕</p>
+                    </div>
+                </div>
+                <div class="cake">
+                    <img src="img/cake1.jpg?height=200&width=200" alt="蛋糕5-4">
+                    <div class="cake-info">
+                        <h3>蛋糕5-4</h3>
+                        <p>千层蛋糕</p>
+                    </div>
+                </div>
+                <div class="cake">
+                    <img src="img/cake1.jpg?height=200&width=200" alt="蛋糕5-5">
+                    <div class="cake-info">
+                        <h3>蛋糕5-5</h3>
+                        <p>芝士蛋糕</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const buttons = document.querySelectorAll('.category-button');
+            const categories = document.querySelectorAll('.category');
+
+            buttons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const category = button.getAttribute('data-category');
+                    
+                    // Remove active class from all buttons and add to clicked button
+                    buttons.forEach(btn => btn.classList.remove('active'));
+                    button.classList.add('active');
+
+                    // Show/hide categories based on selection
+                    categories.forEach(cat => {
+                        if (category === 'all' || cat.getAttribute('data-category') === category) {
+                            cat.style.display = 'block';
+                        } else {
+                            cat.style.display = 'none';
+                        }
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+</html>
