@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>叁月蛋糕 - 圣诞特别版</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: 
+                radial-gradient(circle at 100% 50%, transparent 20%, rgba(255,255,255,0.3) 21%, rgba(255,255,255,0.3) 34%, transparent 35%, transparent),
+                radial-gradient(circle at 0% 50%, transparent 20%, rgba(255,255,255,0.3) 21%, rgba(255,255,255,0.3) 34%, transparent 35%, transparent) 0 -50px;
+            background-color: #f9e8d4;
+            background-size: 75px 100px;
+            color: #333;
+            min-height: 100vh;
+            position: relative;
+        }
+        body::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                linear-gradient(135deg, #ffecd2 25%, transparent 25%) -50px 0,
+                linear-gradient(225deg, #ffecd2 25%, transparent 25%) -50px 0,
+                linear-gradient(315deg, #ffecd2 25%, transparent 25%),
+                linear-gradient(45deg, #ffecd2 25%, transparent 25%);
+            background-size: 100px 100px;
+            opacity: 0.3;
+            z-index: -1;
+        }
+        header {
+            background-color: darksalmon;
+            padding: 1rem;
+            position: relative;
+            z-index: 1;
+        }
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        nav h1 {
+            font-size: 1.5rem;
+            margin: 0;
+            color: #fff;
+        }
+        nav ul {
+            list-style-type: none;
+            display: flex;
+            gap: 1rem;
+            margin: 0;
+            padding: 0;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+        }
+        nav a:hover {
+            color: #ffecd2;
+        }
+        main {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+            position: relative;
+            z-index: 1;
+        }
+        h1 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            color: #4a5568;
+        }
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        .product-card {
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 0.5rem;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            cursor: pointer;
+        }
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        }
+        .product-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            display: block;
+        }
+        .categories {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+        .category-btn {
+            padding: 0.5rem 1rem;
+            background-color: #f9e8d4;
+            border: 2px solid #ed8936;
+            border-radius: 2rem;
+            color: #ed8936;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .category-btn:hover {
+            background-color: #ffd8b4;
+        }
+        .category-btn.active {
+            background-color: #ed8936;
+            color: white;
+        }
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.9);
+        }
+        .modal-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            max-width: 90%;
+            max-height: 90%;
+            width: auto;
+            height: auto;
+            object-fit: contain;
+        }
+        .close {
+            position: absolute;
+            top: 15px;
+            right: 35px;
+            color: #f1f1f1;
+            font-size: 40px;
+            font-weight: bold;
+            transition: 0.3s;
+            cursor: pointer;
+        }
+        .close:hover,
+        .close:focus {
+            color: #bbb;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        .christmas-theme {
+            position: relative;
+        }
+        .christmas-lights {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 10px;
+            display: flex;
+            justify-content: space-between;
+            z-index: 1000;
+        }
+        .light {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            animation: twinkle 1s infinite alternate;
+        }
+        @keyframes twinkle {
+            from { opacity: 0.5; }
+            to { opacity: 1; }
+        }
+        .snow {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            pointer-events: none;
+            z-index: 1001;
+        }
+        .snowflake {
+            position: absolute;
+            background: white;
+            border-radius: 50%;
+            opacity: 0.8;
+            animation: fall linear infinite;
+        }
+        @keyframes fall {
+            to {
+                transform: translateY(100vh);
+            }
+        }
+        .christmas-title {
+            color: #c41e3a;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+        .christmas-badge {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: #c41e3a;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 0.8em;
+            z-index: 10;
+        }
+        .video-container {
+            width: 100%;
+            max-width: 800px;
+            margin: 0 auto 2rem;
+            aspect-ratio: 16 / 9;
+        }
+        .video-container video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .shop-info {
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 0.5rem;
+            padding: 1rem;
+            margin: 0 auto 2rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            max-width: 800px;
+        }
+       @media (max-width: 768px) {
+           .video-container {
+               width: 100%; /* 视频宽度占满屏幕 */
+               max-width: 100%; /* 最大宽度为100% */
+               height: auto; /* 高度自适应 */
+               aspect-ratio: 16 / 9; /* 保持16:9的视频比例 */
+               margin-bottom: 1rem; /* 底部留空，增加间距 */
+           }
+		   .product-grid {
+		       grid-template-columns: repeat(2, 1fr);
+		   }
+       
+           .video-container video {
+               width: 100%; /* 视频宽度为容器的100% */
+               height: auto; /* 高度自适应 */
+               object-fit: cover; /* 保持视频填充容器 */
+           }
+		   .shop-info {
+		           width: 90%; /* 容器宽度为屏幕宽度的90% */
+		           margin-left: auto;
+		           margin-right: auto; /* 水平居中 */
+		           padding: 1rem; /* 内边距增加空间 */
+		           max-width: 500px; /* 限制容器最大宽度为500px */
+		       }
+       }
+	   
+	   @media (max-width: 480px) {
+	       .video-container {
+	           width: 100%; /* 视频容器宽度100% */
+	           max-width: 100%; /* 最大宽度100% */
+	           height: 200px; /* 设置固定高度，保证视频比例 */
+	           aspect-ratio: 16 / 9; /* 视频保持16:9比例 */
+	       }
+		   
+		   
+	   
+	       .video-container video {
+	           width: 100%;
+	           height: 100%;
+	           object-fit: cover;
+	       }
+	   
+	       .shop-info {
+	           width: 90%; /* 容器宽度为屏幕宽度的90% */
+	           max-width: 450px; /* 限制容器最大宽度为450px */
+	           margin-left: auto;
+	           margin-right: auto; /* 水平居中 */
+	           padding: 1rem;
+	       }
+	   }
+	   #bofang{
+		               bottom: 0;       /* 距离底部 0 像素 */
+		               left: 0;         /* 距离左边 0 像素 */
+		               width: 100%;     /* 宽度 100% */
+		               color: white;    /* 文字颜色 */
+		               text-align: center; /* 居中文本 */
+		               padding: 20px 0; /* 上下内边距 */
+		               font-size: 18px; /* 字体大小 */
+					   position: fixed;
+	   }
+    </style>
+</head>
+<body class="christmas-theme">
+    <div class="christmas-lights" id="christmas-lights"></div>
+    <div class="snow" id="snow"></div>
+
+    <header>
+        <nav>
+            <h1>SanYue Cake 🎄</h1>
+            <ul>
+                <li><a href="#">首页</a></li>
+                <li><a href="#">蛋糕系列</a></li>
+                <li><a href="#">关于我们</a></li>
+                <li><a href="#">联系我们</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+		<div id="bofang" >
+			<iframe frameborder="no"  border="0" marginwidth="0" marginheight="0" width=298 height=52 src="//music.163.com/outchain/player?type=2&id=1295047336&auto=1&height=32"></iframe>
+		</div>
+		
+        <h1 class="christmas-title">
+            <img src="./img/logo.png" alt="SanYue Cake Logo" />
+        </h1>
+		
+		
+		
+        <div class="categories">
+            <button class="category-btn active" data-category="all">全部</button>
+            <button class="category-btn" data-category="fruit">男生蛋糕</button>
+            <button class="category-btn" data-category="chocolate">女生蛋糕</button>
+            <button class="category-btn" data-category="lowsugar">长辈蛋糕</button>
+            <button class="category-btn" data-category="boy">男孩蛋糕</button>
+            <button class="category-btn" data-category="girl">女孩蛋糕</button>
+            <button class="category-btn" data-category="seasonal">关于叁月</button>
+            <button class="category-btn" data-category="diy">联系我们</button>
+			
+        </div>
+	
+        <div class="product-grid" id="product-grid"></div>
+    </main>
+
+    <div id="imageModal" class="modal">
+        <span class="close">&times;</span>
+        <img class="modal-content" id="modalImage">
+    </div>
+
+
+    <script>
+
+        const products = [
+                       { id: 1, name: '草莓奶油蛋糕', description: '新鲜草莓与轻盈奶油的完美结合', price: 178.00, image: 'img/cake-man(1).jpg', category: 'fruit'},
+                       { id: 2, name: '草莓奶油蛋糕', description: '新鲜草莓与轻盈奶油的完美结合', price: 178.00, image: 'img/cake-man(2).jpg', category: 'fruit'},
+                       { id: 3, name: '草莓奶油蛋糕', description: '新鲜草莓与轻盈奶油的完美结合', price: 178.00, image: 'img/cake-man(3).jpg', category: 'fruit'},
+                       { id: 4, name: '草莓奶油蛋糕', description: '新鲜草莓与轻盈奶油的完美结合', price: 178.00, image: 'img/cake-man(4).jpg', category: 'fruit'},
+                       { id: 5, name: '草莓奶油蛋糕', description: '新鲜草莓与轻盈奶油的完美结合', price: 178.00, image: 'img/cake-man(5).jpg', category: 'fruit'},
+                       { id: 6, name: '草莓奶油蛋糕', description: '新鲜草莓与轻盈奶油的完美结合', price: 178.00, image: 'img/cake-man(6).jpg', category: 'fruit'},
+                       { id: 7, name: '草莓奶油蛋糕', description: '新鲜草莓与轻盈奶油的完美结合', price: 178.00, image: 'img/cake-man(7).jpg', category: 'fruit'},
+                       { id: 8, name: '草莓奶油蛋糕', description: '新鲜草莓与轻盈奶油的完美结合', price: 178.00, image: 'img/cake-man(8).jpg', category: 'fruit'},
+                       { id: 9, name: '草莓奶油蛋糕', description: '新鲜草莓与轻盈奶油的完美结合', price: 178.00, image: 'img/cake-man(9).jpg', category: 'fruit'},
+                       { id: 10, name: '草莓奶油蛋糕', description: '新鲜草莓与轻盈奶油的完美结合', price: 178.00, image: 'img/cake-man(10).jpg', category: 'fruit'},
+                       { id: 11, name: '草莓奶油蛋糕', description: '新鲜草莓与轻盈奶油的完美结合', price: 178.00, image: 'img/cake-man(11).jpg', category: 'fruit'},
+                       { id: 12, name: '草莓奶油蛋糕', description: '新鲜草莓与轻盈奶油的完美结合', price: 178.00, image: 'img/cake-man(12).jpg', category: 'fruit'},
+                       { id: 13, name: '草莓奶油蛋糕', description: '新鲜草莓与轻盈奶油的完美结合', price: 178.00, image: 'img/cake-man(13).jpg', category: 'fruit'},
+                       { id: 14, name: '草莓奶油蛋糕', description: '新鲜草莓与轻盈奶油的完美结合', price: 178.00, image: 'img/cake-man(14).jpg', category: 'fruit'},
+                       { id: 15, name: '草莓奶油蛋糕', description: '新鲜草莓与轻盈奶油的完美结合', price: 178.00, image: 'img/cake-man(15).jpg', category: 'fruit'},
+                       { id: 16, name: '草莓奶油蛋糕', description: '新鲜草莓与轻盈奶油的完美结合', price: 178.00, image: 'img/cake-man(16).jpg', category: 'fruit'},
+                       { id: 17, name: '草莓奶油蛋糕', description: '新鲜草莓与轻盈奶油的完美结合', price: 178.00, image: 'img/cake-man(17).jpg', category: 'fruit'},
+                       { id: 18, name: '草莓奶油蛋糕', description: '新鲜草莓与轻盈奶油的完美结合', price: 178.00, image: 'img/cake-man(18).jpg', category: 'fruit'},
+                       { id: 19, name: '草莓奶油蛋糕', description: '新鲜草莓与轻盈奶油的完美结合', price: 178.00, image: 'img/cake-man(19).jpg', category: 'fruit'},
+                       { id: 20, name: '草莓奶油蛋糕', description: '新鲜草莓与轻盈奶油的完美结合', price: 178.00, image: 'img/cake-man(20).jpg', category: 'fruit'},
+                       { id: 21, name: '草莓奶油蛋糕', description: '新鲜草莓与轻盈奶油的完美结合', price: 178.00, image: 'img/cake-man(21).jpg', category: 'fruit'},
+                       { id: 22, name: '草莓奶油蛋糕', description: '新鲜草莓与轻盈奶油的完美结合', price: 178.00, image: 'img/cake-man(22).jpg', category: 'fruit'},
+                       { id: 23, name: '草莓奶油蛋糕', description: '新鲜草莓与轻盈奶油的完美结合', price: 178.00, image: 'img/cake-man(23).jpg', category: 'fruit'},
+                       { id: 24, name: '草莓奶油蛋糕', description: '新鲜草莓与轻盈奶油的完美结合', price: 178.00, image: 'img/cake-man(24).jpg', category: 'fruit'},
+                       { id: 25, name: '草莓奶油蛋糕', description: '新鲜草莓与轻盈奶油的完美结合', price: 178.00, image: 'img/cake-man(25).jpg', category: 'fruit'},
+                       { id: 26, name: '草莓奶油蛋糕', description: '新鲜草莓与轻盈奶油的完美结合', price: 178.00, image: 'img/cake-man(26).jpg', category: 'fruit'},
+                       { id: 27, name: '草莓奶油蛋糕', description: '新鲜草莓与轻盈奶油的完美结合', price: 178.00, image: 'img/cake-man(27).jpg', category: 'fruit'},
+                       { id: 28, name: '草莓奶油蛋糕', description: '新鲜草莓与轻盈奶油的完美结合', price: 178.00, image: 'img/cake-man(28).jpg', category: 'fruit'},
+                       { id: 29, name: '草莓奶油蛋糕', description: '新鲜草莓与轻盈奶油的完美结合', price: 178.00, image: 'img/cake-man(29).jpg', category: 'fruit'},
+                       { id: 30, name: '草莓奶油蛋糕', description: '新鲜草莓与轻盈奶油的完美结合', price: 178.00, image: 'img/cake-man(30).jpg', category: 'fruit'},
+                       { id: 31, name: '草莓奶油蛋糕', description: '新鲜草莓与轻盈奶油的完美结合', price: 178.00, image: 'img/cake-man(31).jpg', category: 'fruit'},
+                        			{ id: 32, name: '巧克力松露蛋糕', description: '浓郁巧克力口感，松露般的质地', price: 218.00, image: 'img/cake-men(1).jpg', category: 'chocolate'},
+                        			{ id: 33, name: '巧克力松露蛋糕', description: '浓郁巧克力口感，松露般的质地', price: 218.00, image: 'img/cake-men(2).jpg', category: 'chocolate'},
+                        			{ id: 34, name: '巧克力松露蛋糕', description: '浓郁巧克力口感，松露般的质地', price: 218.00, image: 'img/cake-men(3).jpg', category: 'chocolate'},
+                        			{ id: 35, name: '巧克力松露蛋糕', description: '浓郁巧克力口感，松露般的质地', price: 218.00, image: 'img/cake-men(4).jpg', category: 'chocolate'},
+                        			{ id: 36, name: '巧克力松露蛋糕', description: '浓郁巧克力口感，松露般的质地', price: 218.00, image: 'img/cake-men(5).jpg', category: 'chocolate'},
+                        			{ id: 37, name: '巧克力松露蛋糕', description: '浓郁巧克力口感，松露般的质地', price: 218.00, image: 'img/cake-men(6).jpg', category: 'chocolate'},
+                        			{ id: 38, name: '巧克力松露蛋糕', description: '浓郁巧克力口感，松露般的质地', price: 218.00, image: 'img/cake-men(7).jpg', category: 'chocolate'},
+                        			{ id: 39, name: '巧克力松露蛋糕', description: '浓郁巧克力口感，松露般的质地', price: 218.00, image: 'img/cake-men(8).jpg', category: 'chocolate'},
+                        			{ id: 40, name: '巧克力松露蛋糕', description: '浓郁巧克力口感，松露般的质地', price: 218.00, image: 'img/cake-men(9).jpg', category: 'chocolate'},
+                        			{ id: 41, name: '巧克力松露蛋糕', description: '浓郁巧克力口感，松露般的质地', price: 218.00, image: 'img/cake-men(10).jpg', category: 'chocolate'},
+                        			{ id: 42, name: '巧克力松露蛋糕', description: '浓郁巧克力口感，松露般的质地', price: 218.00, image: 'img/cake-men(11).jpg', category: 'chocolate'},
+                        			{ id: 43, name: '巧克力松露蛋糕', description: '浓郁巧克力口感，松露般的质地', price: 218.00, image: 'img/cake-men(12).jpg', category: 'chocolate'},
+                        			{ id: 44, name: '巧克力松露蛋糕', description: '浓郁巧克力口感，松露般的质地', price: 218.00, image: 'img/cake-men(13).jpg', category: 'chocolate'},
+                        			{ id: 45, name: '巧克力松露蛋糕', description: '浓郁巧克力口感，松露般的质地', price: 218.00, image: 'img/cake-men(14).jpg', category: 'chocolate'},
+                        			{ id: 46, name: '巧克力松露蛋糕', description: '浓郁巧克力口感，松露般的质地', price: 218.00, image: 'img/cake-men(15).jpg', category: 'chocolate'},
+                        			{ id: 47, name: '巧克力松露蛋糕', description: '浓郁巧克力口感，松露般的质地', price: 218.00, image: 'img/cake-men(16).jpg', category: 'chocolate'},
+                        			{ id: 48, name: '巧克力松露蛋糕', description: '浓郁巧克力口感，松露般的质地', price: 218.00, image: 'img/cake-men(17).jpg', category: 'chocolate'},
+                        			{ id: 49, name: '巧克力松露蛋糕', description: '浓郁巧克力口感，松露般的质地', price: 218.00, image: 'img/cake-men(18).jpg', category: 'chocolate'},
+                        			{ id: 50, name: '巧克力松露蛋糕', description: '浓郁巧克力口感，松露般的质地', price: 218.00, image: 'img/cake-men(19).jpg', category: 'chocolate'},
+                        			{ id: 51, name: '巧克力松露蛋糕', description: '浓郁巧克力口感，松露般的质地', price: 218.00, image: 'img/cake-men(20).jpg', category: 'chocolate'},
+                        			{ id: 52, name: '巧克力松露蛋糕', description: '浓郁巧克力口感，松露般的质地', price: 218.00, image: 'img/cake-men(21).jpg', category: 'chocolate'},
+                        			{ id: 53, name: '巧克力松露蛋糕', description: '浓郁巧克力口感，松露般的质地', price: 218.00, image: 'img/cake-men(22).jpg', category: 'chocolate'},
+                        			{ id: 54, name: '巧克力松露蛋糕', description: '浓郁巧克力口感，松露般的质地', price: 218.00, image: 'img/cake-men(23).jpg', category: 'chocolate'},
+                        			{ id: 55, name: '巧克力松露蛋糕', description: '浓郁巧克力口感，松露般的质地', price: 218.00, image: 'img/cake-men(24).jpg', category: 'chocolate'},
+                        			{ id: 56, name: '巧克力松露蛋糕', description: '浓郁巧克力口感，松露般的质地', price: 218.00, image: 'img/cake-men(25).jpg', category: 'chocolate'},
+                        			{ id: 57, name: '巧克力松露蛋糕', description: '浓郁巧克力口感，松露般的质地', price: 218.00, image: 'img/cake-men(26).jpg', category: 'chocolate'},
+                        			{ id: 58, name: '巧克力松露蛋糕', description: '浓郁巧克力口感，松露般的质地', price: 218.00, image: 'img/cake-men(27).jpg', category: 'chocolate'},
+                        			{ id: 59, name: '巧克力松露蛋糕', description: '浓郁巧克力口感，松露般的质地', price: 218.00, image: 'img/cake-men(28).jpg', category: 'chocolate'},
+                        			{ id: 60, name: '巧克力松露蛋糕', description: '浓郁巧克力口感，松露般的质地', price: 218.00, image: 'img/cake-men(29).jpg', category: 'chocolate'},
+                        			{ id: 61, name: '巧克力松露蛋糕', description: '浓郁巧克力口感，松露般的质地', price: 218.00, image: 'img/cake-men(30).jpg', category: 'chocolate'},
+                        			{ id: 62, name: '巧克力松露蛋糕', description: '浓郁巧克力口感，松露般的质地', price: 218.00, image: 'img/cake-men(31).jpg', category: 'chocolate'},
+                        			{ id: 63, name: '巧克力松露蛋糕', description: '浓郁巧克力口感，松露般的质地', price: 218.00, image: 'img/cake-men(32).jpg', category: 'chocolate'},
+                        			{ id: 64, name: '巧克力松露蛋糕', description: '浓郁巧克力口感，松露般的质地', price: 218.00, image: 'img/cake-men(33).jpg', category: 'chocolate'},
+                        			{ id: 65, name: '巧克力松露蛋糕', description: '浓郁巧克力口感，松露般的质地', price: 218.00, image: 'img/cake-men(34).jpg', category: 'chocolate'},
+                        			{ id: 66, name: '巧克力松露蛋糕', description: '浓郁巧克力口感，松露般的质地', price: 218.00, image: 'img/cake-men(35).jpg', category: 'chocolate'},
+                        			{ id: 67, name: '巧克力松露蛋糕', description: '浓郁巧克力口感，松露般的质地', price: 218.00, image: 'img/cake-men(36).jpg', category: 'chocolate'},
+                        			{ id: 68, name: '巧克力松露蛋糕', description: '浓郁巧克力口感，松露般的质地', price: 218.00, image: 'img/cake-men(37).jpg', category: 'chocolate'},
+                        			{ id: 69, name: '巧克力松露蛋糕', description: '浓郁巧克力口感，松露般的质地', price: 218.00, image: 'img/cake-men(38).jpg', category: 'chocolate'},
+                        			{ id: 70, name: '巧克力松露蛋糕', description: '浓郁巧克力口感，松露般的质地', price: 218.00, image: 'img/cake-men(39).jpg', category: 'chocolate'},
+                        			{ id: 71, name: '巧克力松露蛋糕', description: '浓郁巧克力口感，松露般的质地', price: 218.00, image: 'img/cake-men(40).jpg', category: 'chocolate'},
+                        			{ id: 72, name: '巧克力松露蛋糕', description: '浓郁巧克力口感，松露般的质地', price: 218.00, image: 'img/cake-men(41).jpg', category: 'chocolate'},
+                        			{ id: 73, name: '巧克力松露蛋糕', description: '浓郁巧克力口感，松露般的质地', price: 218.00, image: 'img/cake-men(42).jpg', category: 'chocolate'},
+                        			{ id: 74, name: '巧克力松露蛋糕', description: '浓郁巧克力口感，松露般的质地', price: 218.00, image: 'img/cake-men(43).jpg', category: 'chocolate'},
+                        			{ id: 75, name: '巧克力松露蛋糕', description: '浓郁巧克力口感，松露般的质地', price: 218.00, image: 'img/cake-men(44).jpg', category: 'chocolate'},
+                        			{ id: 76, name: '巧克力松露蛋糕', description: '浓郁巧克力口感，松露般的质地', price: 218.00, image: 'img/cake-men(45).jpg', category: 'chocolate'},
+                        			{ id: 77, name: '巧克力松露蛋糕', description: '浓郁巧克力口感，松露般的质地', price: 218.00, image: 'img/cake-men(46).jpg', category: 'chocolate'},
+                        			{ id: 78, name: '巧克力松露蛋糕', description: '浓郁巧克力口感，松露般的质地', price: 218.00, image: 'img/cake-men(47).jpg', category: 'chocolate'},
+                        			{ id: 79, name: '无糖杏仁蛋糕', description: '低糖健康选择，杏仁香气浓郁', price: 198.00, image: 'img/OldMan(1).jpg', category: 'lowsugar'},
+                        			{ id: 80, name: '无糖杏仁蛋糕', description: '低糖健康选择，杏仁香气浓郁', price: 198.00, image: 'img/OldMan(2).jpg', category: 'lowsugar'},
+                        			{ id: 81, name: '无糖杏仁蛋糕', description: '低糖健康选择，杏仁香气浓郁', price: 198.00, image: 'img/OldMan(3).jpg', category: 'lowsugar'},
+                        			{ id: 82, name: '无糖杏仁蛋糕', description: '低糖健康选择，杏仁香气浓郁', price: 198.00, image: 'img/OldMan(4).jpg', category: 'lowsugar'},
+                        			{ id: 83, name: '无糖杏仁蛋糕', description: '低糖健康选择，杏仁香气浓郁', price: 198.00, image: 'img/OldMan(5).jpg', category: 'lowsugar'},
+                        			{ id: 84, name: '无糖杏仁蛋糕', description: '低糖健康选择，杏仁香气浓郁', price: 198.00, image: 'img/OldMan(6).jpg', category: 'lowsugar'},
+                        			{ id: 85, name: '无糖杏仁蛋糕', description: '低糖健康选择，杏仁香气浓郁', price: 198.00, image: 'img/OldMan(7).jpg', category: 'lowsugar'},
+                        			{ id: 86, name: '无糖杏仁蛋糕', description: '低糖健康选择，杏仁香气浓郁', price: 198.00, image: 'img/OldMan(8).jpg', category: 'lowsugar'},
+                        			{ id: 87, name: '无糖杏仁蛋糕', description: '低糖健康选择，杏仁香气浓郁', price: 198.00, image: 'img/OldMan(9).jpg', category: 'lowsugar'},
+                        			{ id: 88, name: '无糖杏仁蛋糕', description: '低糖健康选择，杏仁香气浓郁', price: 198.00, image: 'img/OldMan(10).jpg', category: 'lowsugar'},
+                        			{ id: 89, name: '无糖杏仁蛋糕', description: '低糖健康选择，杏仁香气浓郁', price: 198.00, image: 'img/OldMan(11).jpg', category: 'lowsugar'},
+                        			{ id: 90, name: '无糖杏仁蛋糕', description: '低糖健康选择，杏仁香气浓郁', price: 198.00, image: 'img/OldMan(12).jpg', category: 'lowsugar'},
+                        			{ id: 91, name: '无糖杏仁蛋糕', description: '低糖健康选择，杏仁香气浓郁', price: 198.00, image: 'img/OldMan(13).jpg', category: 'lowsugar'},
+                        			{ id: 92, name: '无糖杏仁蛋糕', description: '低糖健康选择，杏仁香气浓郁', price: 198.00, image: 'img/OldMan(14).jpg', category: 'lowsugar'},
+                        			{ id: 93, name: '无糖杏仁蛋糕', description: '低糖健康选择，杏仁香气浓郁', price: 198.00, image: 'img/OldMan(15).jpg', category: 'lowsugar'},
+                        			{ id: 94, name: '无糖杏仁蛋糕', description: '低糖健康选择，杏仁香气浓郁', price: 198.00, image: 'img/OldMan(16).jpg', category: 'lowsugar'},
+                        			{ id: 95, name: '无糖杏仁蛋糕', description: '低糖健康选择，杏仁香气浓郁', price: 198.00, image: 'img/OldMan(17).jpg', category: 'lowsugar'},
+                        			{ id: 96, name: '无糖杏仁蛋糕', description: '低糖健康选择，杏仁香气浓郁', price: 198.00, image: 'img/OldMan(18).jpg', category: 'lowsugar'},
+                        			{ id: 97, name: '无糖杏仁蛋糕', description: '低糖健康选择，杏仁香气浓郁', price: 198.00, image: 'img/OldMan(19).jpg', category: 'lowsugar'},
+                        			{ id: 98, name: '无糖杏仁蛋糕', description: '低糖健康选择，杏仁香气浓郁', price: 198.00, image: 'img/OldMan(20).jpg', category: 'lowsugar'},
+                        			{ id: 99, name: '无糖杏仁蛋糕', description: '低糖健康选择，杏仁香气浓郁', price: 198.00, image: 'img/OldMan(21).jpg', category: 'lowsugar'},
+                        			{ id: 100, name: '无糖杏仁蛋糕', description: '低糖健康选择，杏仁香气浓郁', price: 198.00, image: 'img/OldMan(22).jpg', category: 'lowsugar'},
+                        			{ id: 101, name: '无糖杏仁蛋糕', description: '低糖健康选择，杏仁香气浓郁', price: 198.00, image: 'img/OldMan(23).jpg', category: 'lowsugar'},
+                        			{ id: 102, name: '无糖杏仁蛋糕', description: '低糖健康选择，杏仁香气浓郁', price: 198.00, image: 'img/OldMan(24).jpg', category: 'lowsugar'},
+                        			{ id: 103, name: '无糖杏仁蛋糕', description: '低糖健康选择，杏仁香气浓郁', price: 198.00, image: 'img/OldMan(25).jpg', category: 'lowsugar'},
+                        			{ id: 104, name: '无糖杏仁蛋糕', description: '低糖健康选择，杏仁香气浓郁', price: 198.00, image: 'img/OldMan(26).jpg', category: 'lowsugar'},
+                        			{ id: 105, name: '无糖杏仁蛋糕', description: '低糖健康选择，杏仁香气浓郁', price: 198.00, image: 'img/OldMan(27).jpg', category: 'lowsugar'},
+                        			{ id: 106, name: '无糖杏仁蛋糕', description: '低糖健康选择，杏仁香气浓郁', price: 198.00, image: 'img/OldMan(28).jpg', category: 'lowsugar'},
+                        			{ id: 107, name: '无糖杏仁蛋糕', description: '低糖健康选择，杏仁香气浓郁', price: 198.00, image: 'img/OldMan(29).jpg', category: 'lowsugar'},
+                        			{ id: 108, name: '无糖杏仁蛋糕', description: '低糖健康选择，杏仁香气浓郁', price: 198.00, image: 'img/OldMan(30).jpg', category: 'lowsugar'},
+                        			{ id: 109, name: '无糖杏仁蛋糕', description: '低糖健康选择，杏仁香气浓郁', price: 198.00, image: 'img/OldMan(31).jpg', category: 'lowsugar'},
+                        			{ id: 110, name: '无糖杏仁蛋糕', description: '低糖健康选择，杏仁香气浓郁', price: 198.00, image: 'img/OldMan(32).jpg', category: 'lowsugar'},
+                        			{ id: 111, name: '无糖杏仁蛋糕', description: '低糖健康选择，杏仁香气浓郁', price: 198.00, image: 'img/OldMan(33).jpg', category: 'lowsugar'},
+                        			{ id: 112, name: '无糖杏仁蛋糕', description: '低糖健康选择，杏仁香气浓郁', price: 198.00, image: 'img/OldMan(34).jpg', category: 'lowsugar'},
+                        			{ id: 113, name: '无糖杏仁蛋糕', description: '低糖健康选择，杏仁香气浓郁', price: 198.00, image: 'img/OldMan(35).jpg', category: 'lowsugar'},
+                        			{ id: 114, name: '无糖杏仁蛋糕', description: '低糖健康选择，杏仁香气浓郁', price: 198.00, image: 'img/OldMan(36).jpg', category: 'lowsugar'},
+                        			{ id: 115, name: '无糖杏仁蛋糕', description: '低糖健康选择，杏仁香气浓郁', price: 198.00, image: 'img/OldMan(37).jpg', category: 'lowsugar'},
+                        			{ id: 116, name: '无糖杏仁蛋糕', description: '低糖健康选择，杏仁香气浓郁', price: 198.00, image: 'img/OldMan(38).jpg', category: 'lowsugar'},
+                        			{ id: 117, name: '无糖杏仁蛋糕', description: '低糖健康选择，杏仁香气浓郁', price: 198.00, image: 'img/OldMan(39).jpg', category: 'lowsugar'},
+                        			{ id: 118, name: '无糖杏仁蛋糕', description: '低糖健康选择，杏仁香气浓郁', price: 198.00, image: 'img/OldMan(40).jpg', category: 'lowsugar'},
+                        			{ id: 119, name: '无糖杏仁蛋糕', description: '低糖健康选择，杏仁香气浓郁', price: 198.00, image: 'img/OldMan(41).jpg', category: 'lowsugar'},
+                        			{ id: 120, name: '蓝莓芝士蛋糕', description: '清新蓝莓与醇厚芝士的美妙融合', price: 168.00, image: 'img/boy(1).jpg', category: 'boy'},
+                        			{ id: 121, name: '蓝莓芝士蛋糕', description: '清新蓝莓与醇厚芝士的美妙融合', price: 168.00, image: 'img/boy(2).jpg', category: 'boy'},
+                        			{ id: 122, name: '蓝莓芝士蛋糕', description: '清新蓝莓与醇厚芝士的美妙融合', price: 168.00, image: 'img/boy(3).jpg', category: 'boy'},
+                        			{ id: 123, name: '蓝莓芝士蛋糕', description: '清新蓝莓与醇厚芝士的美妙融合', price: 168.00, image: 'img/boy(4).jpg', category: 'boy'},
+                        			{ id: 124, name: '蓝莓芝士蛋糕', description: '清新蓝莓与醇厚芝士的美妙融合', price: 168.00, image: 'img/boy(5).jpg', category: 'boy'},
+                        			{ id: 125, name: '蓝莓芝士蛋糕', description: '清新蓝莓与醇厚芝士的美妙融合', price: 168.00, image: 'img/boy(6).jpg', category: 'boy'},
+                        			{ id: 126, name: '蓝莓芝士蛋糕', description: '清新蓝莓与醇厚芝士的美妙融合', price: 168.00, image: 'img/boy(7).jpg', category: 'boy'},
+                        			{ id: 127, name: '蓝莓芝士蛋糕', description: '清新蓝莓与醇厚芝士的美妙融合', price: 168.00, image: 'img/boy(8).jpg', category: 'boy'},
+                        			{ id: 128, name: '蓝莓芝士蛋糕', description: '清新蓝莓与醇厚芝士的美妙融合', price: 168.00, image: 'img/boy(9).jpg', category: 'boy'},
+                        			{ id: 129, name: '蓝莓芝士蛋糕', description: '清新蓝莓与醇厚芝士的美妙融合', price: 168.00, image: 'img/boy(10).jpg', category: 'boy'},
+                    				{ id: 130, name: '蓝莓芝士蛋糕', description: '清新蓝莓与醇厚芝士的美妙融合', price: 168.00, image: 'img/boy(11).jpg', category: 'boy'},
+                    				{ id: 131, name: '蓝莓芝士蛋糕', description: '清新蓝莓与醇厚芝士的美妙融合', price: 168.00, image: 'img/boy(12).jpg', category: 'boy'},
+                    				{ id: 132, name: '蓝莓芝士蛋糕', description: '清新蓝莓与醇厚芝士的美妙融合', price: 168.00, image: 'img/boy(13).jpg', category: 'boy'},
+                    				{ id: 133, name: '蓝莓芝士蛋糕', description: '清新蓝莓与醇厚芝士的美妙融合', price: 168.00, image: 'img/boy(14).jpg', category: 'boy'},
+                    				{ id: 134, name: '蓝莓芝士蛋糕', description: '清新蓝莓与醇厚芝士的美妙融合', price: 168.00, image: 'img/boy(15).jpg', category: 'boy'},
+                    				{ id: 135, name: '蓝莓芝士蛋糕', description: '清新蓝莓与醇厚芝士的美妙融合', price: 168.00, image: 'img/boy(16).jpg', category: 'boy'},
+                    				{ id: 136, name: '蓝莓芝士蛋糕', description: '清新蓝莓与醇厚芝士的美妙融合', price: 168.00, image: 'img/boy(17).jpg', category: 'boy'},
+                    				{ id: 137, name: '蓝莓芝士蛋糕', description: '清新蓝莓与醇厚芝士的美妙融合', price: 168.00, image: 'img/boy(18).jpg', category: 'boy'},
+                    				{ id: 138, name: '蓝莓芝士蛋糕', description: '清新蓝莓与醇厚芝士的美妙融合', price: 168.00, image: 'img/boy(19).jpg', category: 'boy'},
+                    				{ id: 139, name: '蓝莓芝士蛋糕', description: '清新蓝莓与醇厚芝士的美妙融合', price: 168.00, image: 'img/boy(20).jpg', category: 'boy'},
+                    				{ id: 140, name: '蓝莓芝士蛋糕', description: '清新蓝莓与醇厚芝士的美妙融合', price: 168.00, image: 'img/boy(21).jpg', category: 'boy'},
+									 
+                    				{ id: 141, name: '蓝莓芝士蛋糕', description: '清新蓝莓与醇厚芝士的美妙融合', price: 168.00, image: 'img/girl(1).jpg', category: 'girl'},
+                    				{ id: 142, name: '蓝莓芝士蛋糕', description: '清新蓝莓与醇厚芝士的美妙融合', price: 168.00, image: 'img/girl(2).jpg', category: 'girl'},
+                    				{ id: 143, name: '蓝莓芝士蛋糕', description: '清新蓝莓与醇厚芝士的美妙融合', price: 168.00, image: 'img/girl(3).jpg', category: 'girl'},
+                    				{ id: 144, name: '蓝莓芝士蛋糕', description: '清新蓝莓与醇厚芝士的美妙融合', price: 168.00, image: 'img/girl(4).jpg', category: 'girl'},
+                    				{ id: 145, name: '蓝莓芝士蛋糕', description: '清新蓝莓与醇厚芝士的美妙融合', price: 168.00, image: 'img/girl(5).jpg', category: 'girl'},
+                    				{ id: 146, name: '蓝莓芝士蛋糕', description: '清新蓝莓与醇厚芝士的美妙融合', price: 168.00, image: 'img/girl(6).jpg', category: 'girl'},
+                    				{ id: 147, name: '蓝莓芝士蛋糕', description: '清新蓝莓与醇厚芝士的美妙融合', price: 168.00, image: 'img/girl(7).jpg', category: 'girl'},
+                    				{ id: 148, name: '蓝莓芝士蛋糕', description: '清新蓝莓与醇厚芝士的美妙融合', price: 168.00, image: 'img/girl(8).jpg', category: 'girl'},
+                    				{ id: 149, name: '蓝莓芝士蛋糕', description: '清新蓝莓与醇厚芝士的美妙融合', price: 168.00, image: 'img/girl(9).jpg', category: 'girl'},
+                    				{ id: 150, name: '蓝莓芝士蛋糕', description: '清新蓝莓与醇厚芝士的美妙融合', price: 168.00, image: 'img/girl(10).jpg', category: 'girl'},
+									{ id: 151, name: '蓝莓芝士蛋糕', description: '清新蓝莓与醇厚芝士的美妙融合', price: 168.00, image: 'img/girl(11).jpg', category: 'girl'},
+									{ id: 152, name: '蓝莓芝士蛋糕', description: '清新蓝莓与醇厚芝士的美妙融合', price: 168.00, image: 'img/girl(12).jpg', category: 'girl'},
+									{ id: 153, name: '蓝莓芝士蛋糕', description: '清新蓝莓与醇厚芝士的美妙融合', price: 168.00, image: 'img/girl(13).jpg', category: 'girl'},
+									{ id: 154, name: '蓝莓芝士蛋糕', description: '清新蓝莓与醇厚芝士的美妙融合', price: 168.00, image: 'img/girl(14).jpg', category: 'girl'},
+									{ id: 155, name: '蓝莓芝士蛋糕', description: '清新蓝莓与醇厚芝士的美妙融合', price: 168.00, image: 'img/girl(15).jpg', category: 'girl'},
+									{ id: 156, name: '蓝莓芝士蛋糕', description: '清新蓝莓与醇厚芝士的美妙融合', price: 168.00, image: 'img/girl(16).jpg', category: 'girl'},
+									{ id: 157, name: '蓝莓芝士蛋糕', description: '清新蓝莓与醇厚芝士的美妙融合', price: 168.00, image: 'img/girl(17).jpg', category: 'girl'},
+									{ id: 158, name: '蓝莓芝士蛋糕', description: '清新蓝莓与醇厚芝士的美妙融合', price: 168.00, image: 'img/girl(18).jpg', category: 'girl'},
+									{ id: 159, name: '蓝莓芝士蛋糕', description: '清新蓝莓与醇厚芝士的美妙融合', price: 168.00, image: 'img/girl(19).jpg', category: 'girl'},
+									{ id: 160, name: '蓝莓芝士蛋糕', description: '清新蓝莓与醇厚芝士的美妙融合', price: 168.00, image: 'img/girl(20).jpg', category: 'girl'},
+									{ id: 161, name: '蓝莓芝士蛋糕', description: '清新蓝莓与醇厚芝士的美妙融合', price: 168.00, image: 'img/girl(21).jpg', category: 'girl'},
+									{ id: 162, name: '蓝莓芝士蛋糕', description: '清新蓝莓与醇厚芝士的美妙融合', price: 168.00, image: 'img/girl(22).jpg', category: 'girl'},
+									{ id: 163, name: '蓝莓芝士蛋糕', description: '清新蓝莓与醇厚芝士的美妙融合', price: 168.00, image: 'img/girl(23).jpg', category: 'girl'},
+									{ id: 164, name: '蓝莓芝士蛋糕', description: '清新蓝莓与醇厚芝士的美妙融合', price: 168.00, image: 'img/girl(24).jpg', category: 'girl'},
+									{ id: 165, name: '蓝莓芝士蛋糕', description: '清新蓝莓与醇厚芝士的美妙融合', price: 168.00, image: 'img/girl(25).jpg', category: 'girl'},
+									{ id: 166, name: '蓝莓芝士蛋糕', description: '清新蓝莓与醇厚芝士的美妙融合', price: 168.00, image: 'img/girl(26).jpg', category: 'girl'},
+									{ id: 167, name: '蓝莓芝士蛋糕', description: '清新蓝莓与醇厚芝士的美妙融合', price: 168.00, image: 'img/girl(27).jpg', category: 'girl'},
+									{ id: 168, name: '蓝莓芝士蛋糕', description: '清新蓝莓与醇厚芝士的美妙融合', price: 168.00, image: 'img/girl(28).jpg', category: 'girl'},
+									{ id: 169, name: '蓝莓芝士蛋糕', description: '清新蓝莓与醇厚芝士的美妙融合', price: 168.00, image: 'img/girl(29).jpg', category: 'girl'},
+									{ id: 170, name: '蓝莓芝士蛋糕', description: '清新蓝莓与醇厚芝士的美妙融合', price: 168.00, image: 'img/girl(30).jpg', category: 'girl'},
+									{ id: 171, name: '蓝莓芝士蛋糕', description: '清新蓝莓与醇厚芝士的美妙融合', price: 168.00, image: 'img/girl(31).jpg', category: 'girl'},
+									{ id: 172, name: '蓝莓芝士蛋糕', description: '清新蓝莓与醇厚芝士的美妙融合', price: 168.00, image: 'img/girl(32).jpg', category: 'girl'},
+									{ id: 173, name: '蓝莓芝士蛋糕', description: '清新蓝莓与醇厚芝士的美妙融合', price: 168.00, image: 'img/girl(33).jpg', category: 'girl'},
+									{ id: 174, name: '蓝莓芝士蛋糕', description: '清新蓝莓与醇厚芝士的美妙融合', price: 168.00, image: 'img/girl(34).jpg', category: 'girl'},
+									{ id: 175, name: '蓝莓芝士蛋糕', description: '清新蓝莓与醇厚芝士的美妙融合', price: 168.00, image: 'img/girl(35).jpg', category: 'girl'},
+									{ id: 176, name: '蓝莓芝士蛋糕', description: '清新蓝莓与醇厚芝士的美妙融合', price: 168.00, image: 'img/girl(36).jpg', category: 'girl'},
+									{ id: 177, name: '蓝莓芝士蛋糕', description: '清新蓝莓与醇厚芝士的美妙融合', price: 168.00, image: 'img/girl(37).jpg', category: 'girl'},
+									{ id: 178, name: '蓝莓芝士蛋糕', description: '清新蓝莓与醇厚芝士的美妙融合', price: 168.00, image: 'img/girl(38).jpg', category: 'girl'},
+									{ id: 179, name: '蓝莓芝士蛋糕', description: '清新蓝莓与醇厚芝士的美妙融合', price: 168.00, image: 'img/girl(39).jpg', category: 'girl'},
+									
+									{ id: 180, name: '蓝莓芝士蛋糕', description: '清新蓝莓与醇厚芝士的美妙融合', price: 168.00, image: 'img/boy(22).jpg', category: 'boy'},
+									{ id: 181, name: '蓝莓芝士蛋糕', description: '清新蓝莓与醇厚芝士的美妙融合', price: 168.00, image: 'img/boy(23).jpg', category: 'boy'},
+									{ id: 182, name: '蓝莓芝士蛋糕', description: '清新蓝莓与醇厚芝士的美妙融合', price: 168.00, image: 'img/boy(24).jpg', category: 'boy'},
+									{ id: 183, name: '蓝莓芝士蛋糕', description: '清新蓝莓与醇厚芝士的美妙融合', price: 168.00, image: 'img/boy(25).jpg', category: 'boy'},
+									{ id: 184, name: '蓝莓芝士蛋糕', description: '清新蓝莓与醇厚芝士的美妙融合', price: 168.00, image: 'img/boy(26).jpg', category: 'boy'},
+									{ id: 185, name: '蓝莓芝士蛋糕', description: '清新蓝莓与醇厚芝士的美妙融合', price: 168.00, image: 'img/boy(27).jpg', category: 'boy'},
+									{ id: 186, name: '蓝莓芝士蛋糕', description: '清新蓝莓与醇厚芝士的美妙融合', price: 168.00, image: 'img/boy(28).jpg', category: 'boy'},
+									{ id: 187, name: '蓝莓芝士蛋糕', description: '清新蓝莓与醇厚芝士的美妙融合', price: 168.00, image: 'img/boy(29).jpg', category: 'boy'},
+									{ id: 188, name: '蓝莓芝士蛋糕', description: '清新蓝莓与醇厚芝士的美妙融合', price: 168.00, image: 'img/boy(30).jpg', category: 'boy'},
+									{ id: 189, name: '蓝莓芝士蛋糕', description: '清新蓝莓与醇厚芝士的美妙融合', price: 168.00, image: 'img/boy(31).jpg', category: 'boy'},
+									{ id: 190, name: '蓝莓芝士蛋糕', description: '清新蓝莓与醇厚芝士的美妙融合', price: 168.00, image: 'img/boy(32).jpg', category: 'boy'},
+									{ id: 191, name: '蓝莓芝士蛋糕', description: '清新蓝莓与醇厚芝士的美妙融合', price: 168.00, image: 'img/boy(33).jpg', category: 'boy'},
+									{ id: 192, name: '蓝莓芝士蛋糕', description: '清新蓝莓与醇厚芝士的美妙融合', price: 168.00, image: 'img/boy(34).jpg', category: 'boy'},
+									{ id: 193, name: '蓝莓芝士蛋糕', description: '清新蓝莓与醇厚芝士的美妙融合', price: 168.00, image: 'img/boy(35).jpg', category: 'boy'},
+									{ id: 194, name: '蓝莓芝士蛋糕', description: '清新蓝莓与醇厚芝士的美妙融合', price: 168.00, image: 'img/boy(36).jpg', category: 'boy'},
+									{ id: 195, name: '蓝莓芝士蛋糕', description: '清新蓝莓与醇厚芝士的美妙融合', price: 168.00, image: 'img/boy(37).jpg', category: 'boy'},
+									{ id: 196, name: '蓝莓芝士蛋糕', description: '清新蓝莓与醇厚芝士的美妙融合', price: 168.00, image: 'img/boy(38).jpg', category: 'boy'},
+									{ id: 197, name: '蓝莓芝士蛋糕', description: '清新蓝莓与醇厚芝士的美妙融合', price: 168.00, image: 'img/boy(39).jpg', category: 'boy'},
+									{ id: 198, name: '蓝莓芝士蛋糕', description: '清新蓝莓与醇厚芝士的美妙融合', price: 168.00, image: 'img/boy(40).jpg', category: 'boy'},
+                        
+        ];
+		
+		
+
+
+        function createProductCard(product) {
+            const card = document.createElement('div');
+            card.className = 'product-card';
+            
+            const image = document.createElement('img');
+            image.src = product.image;
+            image.alt = product.name;
+            
+            const badge = document.createElement('div');
+            
+            card.appendChild(image);
+            card.appendChild(badge);
+            
+            card.addEventListener('click', () => openModal(product.image));
+            
+            return card;
+        }
+
+        function filterProducts(category) {
+            const productGrid = document.getElementById('product-grid');
+            productGrid.innerHTML = '';
+
+            if (category === 'seasonal') {
+                const videoContainer = document.createElement('div');
+                videoContainer.className = 'video-container';
+                videoContainer.innerHTML = `
+                    <video width="100%" height="100%" autoplay loop playsinline>
+                        <source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4" type="video/mp4">
+                    </video>
+                `;
+                productGrid.appendChild(videoContainer);
+
+                const video = videoContainer.querySelector('video');
+                video.muted = true;
+                video.play().then(() => {
+                    video.muted = false;
+                }).catch(error => {
+                    console.log("Auto-play was prevented");
+                    const playButton = document.createElement('button');
+                    playButton.textContent = '点击播放视频';
+                    playButton.style.position = 'absolute';
+                    playButton.style.top = '50%';
+                    playButton.style.left = '50%';
+                    playButton.style.transform = 'translate(-50%, -50%)';
+                    videoContainer.appendChild(playButton);
+                    playButton.addEventListener('click', () => {
+                        video.muted = false;
+                        video.play();
+                        playButton.remove();
+                    });
+                });
+            }
+
+            if (category === 'diy') {
+                const shopInfo = document.createElement('div');
+                shopInfo.className = 'shop-info';
+                shopInfo.innerHTML = `
+                    <h2>叁月的店铺</h2>
+                    <p>欢迎来到叁月甜品店！我们专注于提供高质量、美味可口的蛋糕，为您的每一个特殊时刻增添甜蜜。</p>
+                    <p>特色：本店承诺只使用进口动物奶油！！</p>
+                    <p>地址：安徽省黄山市屯溪区阳湖镇徽州大道20号长宏御泉湾22幢4号</p>
+                    <p>电话：13615599940</p>
+                    <p>营业时间：周一至周日 8:50 - 20:00</p>
+                `;
+                productGrid.appendChild(shopInfo);
+            }
+
+            const filteredProducts = category === 'all' ? products : products.filter(product => product.category === category);
+            filteredProducts.forEach(product => {
+                const card = createProductCard(product);
+                productGrid.appendChild(card);
+            });
+        }
+
+        function initCategories() {
+            const categoryButtons = document.querySelectorAll('.category-btn');
+            categoryButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    categoryButtons.forEach(btn => btn.classList.remove('active'));
+                    button.classList.add('active');
+                    filterProducts(button.dataset.category);
+                });
+            });
+        }
+
+        const modal = document.getElementById('imageModal');
+        const modalImg = document.getElementById('modalImage');
+        const closeBtn = document.querySelector('.close');
+
+        function openModal(imageSrc) {
+            modal.style.display = 'block';
+            modalImg.src = imageSrc;
+        }
+
+        closeBtn.addEventListener('click', () => {
+            modal.style.display = 'none';
+        });
+
+        window.addEventListener('click', (event) => {
+            if (event.target === modal) {
+                modal.style.display = 'none';
+            }
+        });
+
+
+        // 添加雪花效果
+        const snowContainer = document.getElementById('snow');
+        for (let i = 0; i < 50; i++) {
+            const snowflake = document.createElement('div');
+            snowflake.className = 'snowflake';
+            snowflake.style.left = `${Math.random() * 100}%`;
+            snowflake.style.opacity = Math.random();
+            snowflake.style.fontSize = `${Math.random() * 10 + 10}px`;
+            snowflake.style.animationDuration = `${Math.random() * 3 + 2}s`;
+            snowflake.style.animationDelay = `${Math.random() * 2}s`;
+            snowflake.innerHTML = '❄';
+            snowContainer.appendChild(snowflake);
+        }
+
+        // 初始化页面
+        filterProducts('all');
+        initCategories();
+    </script>
+</body>
+</html>
