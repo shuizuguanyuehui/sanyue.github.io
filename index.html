@@ -10,8 +10,8 @@
             margin: 0;
             padding: 0;
             background: 
-                radial-gradient(circle at 100% 50%, transparent 20%, rgba(255,255,255,0.3) 21%, rgba(255,255,255,0.3) 34%, transparent 35%, transparent),
-                radial-gradient(circle at 0% 50%, transparent 20%, rgba(255,255,255,0.3) 21%, rgba(255,255,255,0.3) 34%, transparent 35%, transparent) 0 -50px;
+                radial-gradientcircle at 100% 50%, transparent 20%, rgba255,255,255,0.3 21%, rgba255,255,255,0.3 34%, transparent 35%, transparent,
+                radial-gradientcircle at 0% 50%, transparent 20%, rgba255,255,255,0.3 21%, rgba255,255,255,0.3 34%, transparent 35%, transparent 0 -50px;
             background-color: #f9e8d4;
             background-size: 75px 100px;
             color: #333;
@@ -26,10 +26,10 @@
             right: 0;
             bottom: 0;
             background: 
-                linear-gradient(135deg, #ffecd2 25%, transparent 25%) -50px 0,
-                linear-gradient(225deg, #ffecd2 25%, transparent 25%) -50px 0,
-                linear-gradient(315deg, #ffecd2 25%, transparent 25%),
-                linear-gradient(45deg, #ffecd2 25%, transparent 25%);
+                linear-gradient135deg, #ffecd2 25%, transparent 25% -50px 0,
+                linear-gradient225deg, #ffecd2 25%, transparent 25% -50px 0,
+                linear-gradient315deg, #ffecd2 25%, transparent 25%,
+                linear-gradient45deg, #ffecd2 25%, transparent 25%;
             background-size: 100px 100px;
             opacity: 0.3;
             z-index: -1;
@@ -81,23 +81,23 @@
         }
         .product-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeatauto-fit, minmax300px, 1fr;
             gap: 2rem;
         }
         .product-card {
-            background-color: rgba(255, 255, 255, 0.9);
+            background-color: rgba255, 255, 255, 0.9;
             border-radius: 0.5rem;
             overflow: hidden;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 6px rgba0, 0, 0, 0.1;
             display: flex;
             flex-direction: column;
             height: 100%;
             cursor: pointer;
         }
         .product-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+            transform: translateY-5px;
+            box-shadow: 0 6px 12px rgba0, 0, 0, 0.15;
         }
         .product-card img {
             width: 100%;
@@ -138,13 +138,13 @@
             width: 100%;
             height: 100%;
             overflow: auto;
-            background-color: rgba(0,0,0,0.9);
+            background-color: rgba0,0,0,0.9;
         }
         .modal-content {
             position: absolute;
             top: 50%;
             left: 50%;
-            transform: translate(-50%, -50%);
+            transform: translate-50%, -50%;
             max-width: 90%;
             max-height: 90%;
             width: auto;
@@ -208,12 +208,12 @@
         }
         @keyframes fall {
             to {
-                transform: translateY(100vh);
+                transform: translateY100vh;
             }
         }
         .christmas-title {
             color: #c41e3a;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+            text-shadow: 2px 2px 4px rgba0,0,0,0.1;
         }
         .christmas-badge {
             position: absolute;
@@ -238,14 +238,14 @@
             object-fit: cover;
         }
         .shop-info {
-            background-color: rgba(255, 255, 255, 0.9);
+            background-color: rgba255, 255, 255, 0.9;
             border-radius: 0.5rem;
             padding: 1rem;
             margin: 0 auto 2rem;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 6px rgba0, 0, 0, 0.1;
             max-width: 800px;
         }
-       @media (max-width: 768px) {
+       @media max-width: 768px {
            .video-container {
                width: 100%; /* 视频宽度占满屏幕 */
                max-width: 100%; /* 最大宽度为100% */
@@ -254,7 +254,7 @@
                margin-bottom: 1rem; /* 底部留空，增加间距 */
            }
 		   .product-grid {
-		       grid-template-columns: repeat(2, 1fr);
+		       grid-template-columns: repeat2, 1fr;
 		   }
        
            .video-container video {
@@ -271,7 +271,7 @@
 		       }
        }
 	   
-	   @media (max-width: 480px) {
+	   @media max-width: 480px {
 	       .video-container {
 	           width: 100%; /* 视频容器宽度100% */
 	           max-width: 100%; /* 最大宽度100% */
@@ -359,267 +359,267 @@
     <script>
 
         const products = [
-                       { id: 1, name: '草莓奶油蛋糕', description: '新鲜草莓与轻盈奶油的完美结合', price: 178.00, image: 'img/cake-man(1).webp', category: 'fruit'},
-                       { id: 2, name: '草莓奶油蛋糕', description: '新鲜草莓与轻盈奶油的完美结合', price: 178.00, image: 'img/cake-man(2).webp', category: 'fruit'},
-                       { id: 3, name: '草莓奶油蛋糕', description: '新鲜草莓与轻盈奶油的完美结合', price: 178.00, image: 'img/cake-man(3).webp', category: 'fruit'},
-                       { id: 4, name: '草莓奶油蛋糕', description: '新鲜草莓与轻盈奶油的完美结合', price: 178.00, image: 'img/cake-man(4).webp', category: 'fruit'},
-                       { id: 5, name: '草莓奶油蛋糕', description: '新鲜草莓与轻盈奶油的完美结合', price: 178.00, image: 'img/cake-man(5).webp', category: 'fruit'},
-                       { id: 6, name: '草莓奶油蛋糕', description: '新鲜草莓与轻盈奶油的完美结合', price: 178.00, image: 'img/cake-man(6).webp', category: 'fruit'},
-                       { id: 7, name: '草莓奶油蛋糕', description: '新鲜草莓与轻盈奶油的完美结合', price: 178.00, image: 'img/cake-man(7).webp', category: 'fruit'},
-                       { id: 8, name: '草莓奶油蛋糕', description: '新鲜草莓与轻盈奶油的完美结合', price: 178.00, image: 'img/cake-man(8).webp', category: 'fruit'},
-                       { id: 9, name: '草莓奶油蛋糕', description: '新鲜草莓与轻盈奶油的完美结合', price: 178.00, image: 'img/cake-man(9).webp', category: 'fruit'},
-                       { id: 10, name: '草莓奶油蛋糕', description: '新鲜草莓与轻盈奶油的完美结合', price: 178.00, image: 'img/cake-man(10).webp', category: 'fruit'},
-                       { id: 11, name: '草莓奶油蛋糕', description: '新鲜草莓与轻盈奶油的完美结合', price: 178.00, image: 'img/cake-man(11).webp', category: 'fruit'},
-                       { id: 12, name: '草莓奶油蛋糕', description: '新鲜草莓与轻盈奶油的完美结合', price: 178.00, image: 'img/cake-man(12).webp', category: 'fruit'},
-                       { id: 13, name: '草莓奶油蛋糕', description: '新鲜草莓与轻盈奶油的完美结合', price: 178.00, image: 'img/cake-man(13).webp', category: 'fruit'},
-                       { id: 14, name: '草莓奶油蛋糕', description: '新鲜草莓与轻盈奶油的完美结合', price: 178.00, image: 'img/cake-man(14).webp', category: 'fruit'},
-                       { id: 15, name: '草莓奶油蛋糕', description: '新鲜草莓与轻盈奶油的完美结合', price: 178.00, image: 'img/cake-man(15).webp', category: 'fruit'},
-                       { id: 16, name: '草莓奶油蛋糕', description: '新鲜草莓与轻盈奶油的完美结合', price: 178.00, image: 'img/cake-man(16).webp', category: 'fruit'},
-                       { id: 17, name: '草莓奶油蛋糕', description: '新鲜草莓与轻盈奶油的完美结合', price: 178.00, image: 'img/cake-man(17).webp', category: 'fruit'},
-                       { id: 18, name: '草莓奶油蛋糕', description: '新鲜草莓与轻盈奶油的完美结合', price: 178.00, image: 'img/cake-man(18).webp', category: 'fruit'},
-                       { id: 19, name: '草莓奶油蛋糕', description: '新鲜草莓与轻盈奶油的完美结合', price: 178.00, image: 'img/cake-man(19).webp', category: 'fruit'},
-                       { id: 20, name: '草莓奶油蛋糕', description: '新鲜草莓与轻盈奶油的完美结合', price: 178.00, image: 'img/cake-man(20).webp', category: 'fruit'},
-                       { id: 21, name: '草莓奶油蛋糕', description: '新鲜草莓与轻盈奶油的完美结合', price: 178.00, image: 'img/cake-man(21).webp', category: 'fruit'},
-                       { id: 22, name: '草莓奶油蛋糕', description: '新鲜草莓与轻盈奶油的完美结合', price: 178.00, image: 'img/cake-man(22).webp', category: 'fruit'},
-                       { id: 23, name: '草莓奶油蛋糕', description: '新鲜草莓与轻盈奶油的完美结合', price: 178.00, image: 'img/cake-man(23).webp', category: 'fruit'},
-                       { id: 24, name: '草莓奶油蛋糕', description: '新鲜草莓与轻盈奶油的完美结合', price: 178.00, image: 'img/cake-man(24).webp', category: 'fruit'},
-                       { id: 25, name: '草莓奶油蛋糕', description: '新鲜草莓与轻盈奶油的完美结合', price: 178.00, image: 'img/cake-man(25).webp', category: 'fruit'},
-                       { id: 26, name: '草莓奶油蛋糕', description: '新鲜草莓与轻盈奶油的完美结合', price: 178.00, image: 'img/cake-man(26).webp', category: 'fruit'},
-                       { id: 27, name: '草莓奶油蛋糕', description: '新鲜草莓与轻盈奶油的完美结合', price: 178.00, image: 'img/cake-man(27).webp', category: 'fruit'},
-                       { id: 28, name: '草莓奶油蛋糕', description: '新鲜草莓与轻盈奶油的完美结合', price: 178.00, image: 'img/cake-man(28).webp', category: 'fruit'},
-                       { id: 29, name: '草莓奶油蛋糕', description: '新鲜草莓与轻盈奶油的完美结合', price: 178.00, image: 'img/cake-man(29).webp', category: 'fruit'},
-                       { id: 30, name: '草莓奶油蛋糕', description: '新鲜草莓与轻盈奶油的完美结合', price: 178.00, image: 'img/cake-man(30).webp', category: 'fruit'},
-                       { id: 31, name: '草莓奶油蛋糕', description: '新鲜草莓与轻盈奶油的完美结合', price: 178.00, image: 'img/cake-man(31).webp', category: 'fruit'},
-                        			{ id: 32, name: '巧克力松露蛋糕', description: '浓郁巧克力口感，松露般的质地', price: 218.00, image: 'img/cake-men(1).webp', category: 'chocolate'},
-                        			{ id: 33, name: '巧克力松露蛋糕', description: '浓郁巧克力口感，松露般的质地', price: 218.00, image: 'img/cake-men(2).webp', category: 'chocolate'},
-                        			{ id: 34, name: '巧克力松露蛋糕', description: '浓郁巧克力口感，松露般的质地', price: 218.00, image: 'img/cake-men(3).webp', category: 'chocolate'},
-                        			{ id: 35, name: '巧克力松露蛋糕', description: '浓郁巧克力口感，松露般的质地', price: 218.00, image: 'img/cake-men(4).webp', category: 'chocolate'},
-                        			{ id: 36, name: '巧克力松露蛋糕', description: '浓郁巧克力口感，松露般的质地', price: 218.00, image: 'img/cake-men(5).webp', category: 'chocolate'},
-                        			{ id: 37, name: '巧克力松露蛋糕', description: '浓郁巧克力口感，松露般的质地', price: 218.00, image: 'img/cake-men(6).webp', category: 'chocolate'},
-                        			{ id: 38, name: '巧克力松露蛋糕', description: '浓郁巧克力口感，松露般的质地', price: 218.00, image: 'img/cake-men(7).webp', category: 'chocolate'},
-                        			{ id: 39, name: '巧克力松露蛋糕', description: '浓郁巧克力口感，松露般的质地', price: 218.00, image: 'img/cake-men(8).webp', category: 'chocolate'},
-                        			{ id: 40, name: '巧克力松露蛋糕', description: '浓郁巧克力口感，松露般的质地', price: 218.00, image: 'img/cake-men(9).webp', category: 'chocolate'},
-                        			{ id: 41, name: '巧克力松露蛋糕', description: '浓郁巧克力口感，松露般的质地', price: 218.00, image: 'img/cake-men(10).webp', category: 'chocolate'},
-                        			{ id: 42, name: '巧克力松露蛋糕', description: '浓郁巧克力口感，松露般的质地', price: 218.00, image: 'img/cake-men(11).webp', category: 'chocolate'},
-                        			{ id: 43, name: '巧克力松露蛋糕', description: '浓郁巧克力口感，松露般的质地', price: 218.00, image: 'img/cake-men(12).webp', category: 'chocolate'},
-                        			{ id: 44, name: '巧克力松露蛋糕', description: '浓郁巧克力口感，松露般的质地', price: 218.00, image: 'img/cake-men(13).webp', category: 'chocolate'},
-                        			{ id: 45, name: '巧克力松露蛋糕', description: '浓郁巧克力口感，松露般的质地', price: 218.00, image: 'img/cake-men(14).webp', category: 'chocolate'},
-                        			{ id: 46, name: '巧克力松露蛋糕', description: '浓郁巧克力口感，松露般的质地', price: 218.00, image: 'img/cake-men(15).webp', category: 'chocolate'},
-                        			{ id: 47, name: '巧克力松露蛋糕', description: '浓郁巧克力口感，松露般的质地', price: 218.00, image: 'img/cake-men(16).webp', category: 'chocolate'},
-                        			{ id: 48, name: '巧克力松露蛋糕', description: '浓郁巧克力口感，松露般的质地', price: 218.00, image: 'img/cake-men(17).webp', category: 'chocolate'},
-                        			{ id: 49, name: '巧克力松露蛋糕', description: '浓郁巧克力口感，松露般的质地', price: 218.00, image: 'img/cake-men(18).webp', category: 'chocolate'},
-                        			{ id: 50, name: '巧克力松露蛋糕', description: '浓郁巧克力口感，松露般的质地', price: 218.00, image: 'img/cake-men(19).webp', category: 'chocolate'},
-                        			{ id: 51, name: '巧克力松露蛋糕', description: '浓郁巧克力口感，松露般的质地', price: 218.00, image: 'img/cake-men(20).webp', category: 'chocolate'},
-                        			{ id: 52, name: '巧克力松露蛋糕', description: '浓郁巧克力口感，松露般的质地', price: 218.00, image: 'img/cake-men(21).webp', category: 'chocolate'},
-                        			{ id: 53, name: '巧克力松露蛋糕', description: '浓郁巧克力口感，松露般的质地', price: 218.00, image: 'img/cake-men(22).webp', category: 'chocolate'},
-                        			{ id: 54, name: '巧克力松露蛋糕', description: '浓郁巧克力口感，松露般的质地', price: 218.00, image: 'img/cake-men(23).webp', category: 'chocolate'},
-                        			{ id: 55, name: '巧克力松露蛋糕', description: '浓郁巧克力口感，松露般的质地', price: 218.00, image: 'img/cake-men(24).webp', category: 'chocolate'},
-                        			{ id: 56, name: '巧克力松露蛋糕', description: '浓郁巧克力口感，松露般的质地', price: 218.00, image: 'img/cake-men(25).webp', category: 'chocolate'},
-                        			{ id: 57, name: '巧克力松露蛋糕', description: '浓郁巧克力口感，松露般的质地', price: 218.00, image: 'img/cake-men(26).webp', category: 'chocolate'},
-                        			{ id: 58, name: '巧克力松露蛋糕', description: '浓郁巧克力口感，松露般的质地', price: 218.00, image: 'img/cake-men(27).webp', category: 'chocolate'},
-                        			{ id: 59, name: '巧克力松露蛋糕', description: '浓郁巧克力口感，松露般的质地', price: 218.00, image: 'img/cake-men(28).webp', category: 'chocolate'},
-                        			{ id: 60, name: '巧克力松露蛋糕', description: '浓郁巧克力口感，松露般的质地', price: 218.00, image: 'img/cake-men(29).webp', category: 'chocolate'},
-                        			{ id: 61, name: '巧克力松露蛋糕', description: '浓郁巧克力口感，松露般的质地', price: 218.00, image: 'img/cake-men(30).webp', category: 'chocolate'},
-                        			{ id: 62, name: '巧克力松露蛋糕', description: '浓郁巧克力口感，松露般的质地', price: 218.00, image: 'img/cake-men(31).webp', category: 'chocolate'},
-                        			{ id: 63, name: '巧克力松露蛋糕', description: '浓郁巧克力口感，松露般的质地', price: 218.00, image: 'img/cake-men(32).webp', category: 'chocolate'},
-                        			{ id: 64, name: '巧克力松露蛋糕', description: '浓郁巧克力口感，松露般的质地', price: 218.00, image: 'img/cake-men(33).webp', category: 'chocolate'},
-                        			{ id: 65, name: '巧克力松露蛋糕', description: '浓郁巧克力口感，松露般的质地', price: 218.00, image: 'img/cake-men(34).webp', category: 'chocolate'},
-                        			{ id: 66, name: '巧克力松露蛋糕', description: '浓郁巧克力口感，松露般的质地', price: 218.00, image: 'img/cake-men(35).webp', category: 'chocolate'},
-                        			{ id: 67, name: '巧克力松露蛋糕', description: '浓郁巧克力口感，松露般的质地', price: 218.00, image: 'img/cake-men(36).webp', category: 'chocolate'},
-                        			{ id: 68, name: '巧克力松露蛋糕', description: '浓郁巧克力口感，松露般的质地', price: 218.00, image: 'img/cake-men(37).webp', category: 'chocolate'},
-                        			{ id: 69, name: '巧克力松露蛋糕', description: '浓郁巧克力口感，松露般的质地', price: 218.00, image: 'img/cake-men(38).webp', category: 'chocolate'},
-                        			{ id: 70, name: '巧克力松露蛋糕', description: '浓郁巧克力口感，松露般的质地', price: 218.00, image: 'img/cake-men(39).webp', category: 'chocolate'},
-                        			{ id: 71, name: '巧克力松露蛋糕', description: '浓郁巧克力口感，松露般的质地', price: 218.00, image: 'img/cake-men(40).webp', category: 'chocolate'},
-                        			{ id: 72, name: '巧克力松露蛋糕', description: '浓郁巧克力口感，松露般的质地', price: 218.00, image: 'img/cake-men(41).webp', category: 'chocolate'},
-                        			{ id: 73, name: '巧克力松露蛋糕', description: '浓郁巧克力口感，松露般的质地', price: 218.00, image: 'img/cake-men(42).webp', category: 'chocolate'},
-                        			{ id: 74, name: '巧克力松露蛋糕', description: '浓郁巧克力口感，松露般的质地', price: 218.00, image: 'img/cake-men(43).webp', category: 'chocolate'},
-                        			{ id: 75, name: '巧克力松露蛋糕', description: '浓郁巧克力口感，松露般的质地', price: 218.00, image: 'img/cake-men(44).webp', category: 'chocolate'},
-                        			{ id: 76, name: '巧克力松露蛋糕', description: '浓郁巧克力口感，松露般的质地', price: 218.00, image: 'img/cake-men(45).webp', category: 'chocolate'},
-                        			{ id: 77, name: '巧克力松露蛋糕', description: '浓郁巧克力口感，松露般的质地', price: 218.00, image: 'img/cake-men(46).webp', category: 'chocolate'},
-                        			{ id: 78, name: '巧克力松露蛋糕', description: '浓郁巧克力口感，松露般的质地', price: 218.00, image: 'img/cake-men(47).webp', category: 'chocolate'},
-                        			{ id: 79, name: '无糖杏仁蛋糕', description: '低糖健康选择，杏仁香气浓郁', price: 198.00, image: 'img/OldMan(1).webp', category: 'lowsugar'},
-                        			{ id: 80, name: '无糖杏仁蛋糕', description: '低糖健康选择，杏仁香气浓郁', price: 198.00, image: 'img/OldMan(2).webp', category: 'lowsugar'},
-                        			{ id: 81, name: '无糖杏仁蛋糕', description: '低糖健康选择，杏仁香气浓郁', price: 198.00, image: 'img/OldMan(3).webp', category: 'lowsugar'},
-                        			{ id: 82, name: '无糖杏仁蛋糕', description: '低糖健康选择，杏仁香气浓郁', price: 198.00, image: 'img/OldMan(4).webp', category: 'lowsugar'},
-                        			{ id: 83, name: '无糖杏仁蛋糕', description: '低糖健康选择，杏仁香气浓郁', price: 198.00, image: 'img/OldMan(5).webp', category: 'lowsugar'},
-                        			{ id: 84, name: '无糖杏仁蛋糕', description: '低糖健康选择，杏仁香气浓郁', price: 198.00, image: 'img/OldMan(6).webp', category: 'lowsugar'},
-                        			{ id: 85, name: '无糖杏仁蛋糕', description: '低糖健康选择，杏仁香气浓郁', price: 198.00, image: 'img/OldMan(7).webp', category: 'lowsugar'},
-                        			{ id: 86, name: '无糖杏仁蛋糕', description: '低糖健康选择，杏仁香气浓郁', price: 198.00, image: 'img/OldMan(8).webp', category: 'lowsugar'},
-                        			{ id: 87, name: '无糖杏仁蛋糕', description: '低糖健康选择，杏仁香气浓郁', price: 198.00, image: 'img/OldMan(9).webp', category: 'lowsugar'},
-                        			{ id: 88, name: '无糖杏仁蛋糕', description: '低糖健康选择，杏仁香气浓郁', price: 198.00, image: 'img/OldMan(10).webp', category: 'lowsugar'},
-                        			{ id: 89, name: '无糖杏仁蛋糕', description: '低糖健康选择，杏仁香气浓郁', price: 198.00, image: 'img/OldMan(11).webp', category: 'lowsugar'},
-                        			{ id: 90, name: '无糖杏仁蛋糕', description: '低糖健康选择，杏仁香气浓郁', price: 198.00, image: 'img/OldMan(12).webp', category: 'lowsugar'},
-                        			{ id: 91, name: '无糖杏仁蛋糕', description: '低糖健康选择，杏仁香气浓郁', price: 198.00, image: 'img/OldMan(13).webp', category: 'lowsugar'},
-                        			{ id: 92, name: '无糖杏仁蛋糕', description: '低糖健康选择，杏仁香气浓郁', price: 198.00, image: 'img/OldMan(14).webp', category: 'lowsugar'},
-                        			{ id: 93, name: '无糖杏仁蛋糕', description: '低糖健康选择，杏仁香气浓郁', price: 198.00, image: 'img/OldMan(15).webp', category: 'lowsugar'},
-                        			{ id: 94, name: '无糖杏仁蛋糕', description: '低糖健康选择，杏仁香气浓郁', price: 198.00, image: 'img/OldMan(16).webp', category: 'lowsugar'},
-                        			{ id: 95, name: '无糖杏仁蛋糕', description: '低糖健康选择，杏仁香气浓郁', price: 198.00, image: 'img/OldMan(17).webp', category: 'lowsugar'},
-                        			{ id: 96, name: '无糖杏仁蛋糕', description: '低糖健康选择，杏仁香气浓郁', price: 198.00, image: 'img/OldMan(18).webp', category: 'lowsugar'},
-                        			{ id: 97, name: '无糖杏仁蛋糕', description: '低糖健康选择，杏仁香气浓郁', price: 198.00, image: 'img/OldMan(19).webp', category: 'lowsugar'},
-                        			{ id: 98, name: '无糖杏仁蛋糕', description: '低糖健康选择，杏仁香气浓郁', price: 198.00, image: 'img/OldMan(20).webp', category: 'lowsugar'},
-                        			{ id: 99, name: '无糖杏仁蛋糕', description: '低糖健康选择，杏仁香气浓郁', price: 198.00, image: 'img/OldMan(21).webp', category: 'lowsugar'},
-                        			{ id: 100, name: '无糖杏仁蛋糕', description: '低糖健康选择，杏仁香气浓郁', price: 198.00, image: 'img/OldMan(22).webp', category: 'lowsugar'},
-                        			{ id: 101, name: '无糖杏仁蛋糕', description: '低糖健康选择，杏仁香气浓郁', price: 198.00, image: 'img/OldMan(23).webp', category: 'lowsugar'},
-                        			{ id: 102, name: '无糖杏仁蛋糕', description: '低糖健康选择，杏仁香气浓郁', price: 198.00, image: 'img/OldMan(24).webp', category: 'lowsugar'},
-                        			{ id: 103, name: '无糖杏仁蛋糕', description: '低糖健康选择，杏仁香气浓郁', price: 198.00, image: 'img/OldMan(25).webp', category: 'lowsugar'},
-                        			{ id: 104, name: '无糖杏仁蛋糕', description: '低糖健康选择，杏仁香气浓郁', price: 198.00, image: 'img/OldMan(26).webp', category: 'lowsugar'},
-                        			{ id: 105, name: '无糖杏仁蛋糕', description: '低糖健康选择，杏仁香气浓郁', price: 198.00, image: 'img/OldMan(27).webp', category: 'lowsugar'},
-                        			{ id: 106, name: '无糖杏仁蛋糕', description: '低糖健康选择，杏仁香气浓郁', price: 198.00, image: 'img/OldMan(28).webp', category: 'lowsugar'},
-                        			{ id: 107, name: '无糖杏仁蛋糕', description: '低糖健康选择，杏仁香气浓郁', price: 198.00, image: 'img/OldMan(29).webp', category: 'lowsugar'},
-                        			{ id: 108, name: '无糖杏仁蛋糕', description: '低糖健康选择，杏仁香气浓郁', price: 198.00, image: 'img/OldMan(30).webp', category: 'lowsugar'},
-                        			{ id: 109, name: '无糖杏仁蛋糕', description: '低糖健康选择，杏仁香气浓郁', price: 198.00, image: 'img/OldMan(31).webp', category: 'lowsugar'},
-                        			{ id: 110, name: '无糖杏仁蛋糕', description: '低糖健康选择，杏仁香气浓郁', price: 198.00, image: 'img/OldMan(32).webp', category: 'lowsugar'},
-                        			{ id: 111, name: '无糖杏仁蛋糕', description: '低糖健康选择，杏仁香气浓郁', price: 198.00, image: 'img/OldMan(33).webp', category: 'lowsugar'},
-                        			{ id: 112, name: '无糖杏仁蛋糕', description: '低糖健康选择，杏仁香气浓郁', price: 198.00, image: 'img/OldMan(34).webp', category: 'lowsugar'},
-                        			{ id: 113, name: '无糖杏仁蛋糕', description: '低糖健康选择，杏仁香气浓郁', price: 198.00, image: 'img/OldMan(35).webp', category: 'lowsugar'},
-                        			{ id: 114, name: '无糖杏仁蛋糕', description: '低糖健康选择，杏仁香气浓郁', price: 198.00, image: 'img/OldMan(36).webp', category: 'lowsugar'},
-                        			{ id: 115, name: '无糖杏仁蛋糕', description: '低糖健康选择，杏仁香气浓郁', price: 198.00, image: 'img/OldMan(37).webp', category: 'lowsugar'},
-                        			{ id: 116, name: '无糖杏仁蛋糕', description: '低糖健康选择，杏仁香气浓郁', price: 198.00, image: 'img/OldMan(38).webp', category: 'lowsugar'},
-                        			{ id: 117, name: '无糖杏仁蛋糕', description: '低糖健康选择，杏仁香气浓郁', price: 198.00, image: 'img/OldMan(39).webp', category: 'lowsugar'},
-                        			{ id: 118, name: '无糖杏仁蛋糕', description: '低糖健康选择，杏仁香气浓郁', price: 198.00, image: 'img/OldMan(40).webp', category: 'lowsugar'},
-                        			{ id: 119, name: '无糖杏仁蛋糕', description: '低糖健康选择，杏仁香气浓郁', price: 198.00, image: 'img/OldMan(41).webp', category: 'lowsugar'},
-                        			{ id: 120, name: '蓝莓芝士蛋糕', description: '清新蓝莓与醇厚芝士的美妙融合', price: 168.00, image: 'img/boy(1).webp', category: 'boy'},
-                        			{ id: 121, name: '蓝莓芝士蛋糕', description: '清新蓝莓与醇厚芝士的美妙融合', price: 168.00, image: 'img/boy(2).webp', category: 'boy'},
-                        			{ id: 122, name: '蓝莓芝士蛋糕', description: '清新蓝莓与醇厚芝士的美妙融合', price: 168.00, image: 'img/boy(3).webp', category: 'boy'},
-                        			{ id: 123, name: '蓝莓芝士蛋糕', description: '清新蓝莓与醇厚芝士的美妙融合', price: 168.00, image: 'img/boy(4).webp', category: 'boy'},
-                        			{ id: 124, name: '蓝莓芝士蛋糕', description: '清新蓝莓与醇厚芝士的美妙融合', price: 168.00, image: 'img/boy(5).webp', category: 'boy'},
-                        			{ id: 125, name: '蓝莓芝士蛋糕', description: '清新蓝莓与醇厚芝士的美妙融合', price: 168.00, image: 'img/boy(6).webp', category: 'boy'},
-                        			{ id: 126, name: '蓝莓芝士蛋糕', description: '清新蓝莓与醇厚芝士的美妙融合', price: 168.00, image: 'img/boy(7).webp', category: 'boy'},
-                        			{ id: 127, name: '蓝莓芝士蛋糕', description: '清新蓝莓与醇厚芝士的美妙融合', price: 168.00, image: 'img/boy(8).webp', category: 'boy'},
-                        			{ id: 128, name: '蓝莓芝士蛋糕', description: '清新蓝莓与醇厚芝士的美妙融合', price: 168.00, image: 'img/boy(9).webp', category: 'boy'},
-                        			{ id: 129, name: '蓝莓芝士蛋糕', description: '清新蓝莓与醇厚芝士的美妙融合', price: 168.00, image: 'img/boy(10).webp', category: 'boy'},
-                    				{ id: 130, name: '蓝莓芝士蛋糕', description: '清新蓝莓与醇厚芝士的美妙融合', price: 168.00, image: 'img/boy(11).webp', category: 'boy'},
-                    				{ id: 131, name: '蓝莓芝士蛋糕', description: '清新蓝莓与醇厚芝士的美妙融合', price: 168.00, image: 'img/boy(12).webp', category: 'boy'},
-                    				{ id: 132, name: '蓝莓芝士蛋糕', description: '清新蓝莓与醇厚芝士的美妙融合', price: 168.00, image: 'img/boy(13).webp', category: 'boy'},
-                    				{ id: 133, name: '蓝莓芝士蛋糕', description: '清新蓝莓与醇厚芝士的美妙融合', price: 168.00, image: 'img/boy(14).webp', category: 'boy'},
-                    				{ id: 134, name: '蓝莓芝士蛋糕', description: '清新蓝莓与醇厚芝士的美妙融合', price: 168.00, image: 'img/boy(15).webp', category: 'boy'},
-                    				{ id: 135, name: '蓝莓芝士蛋糕', description: '清新蓝莓与醇厚芝士的美妙融合', price: 168.00, image: 'img/boy(16).webp', category: 'boy'},
-                    				{ id: 136, name: '蓝莓芝士蛋糕', description: '清新蓝莓与醇厚芝士的美妙融合', price: 168.00, image: 'img/boy(17).webp', category: 'boy'},
-                    				{ id: 137, name: '蓝莓芝士蛋糕', description: '清新蓝莓与醇厚芝士的美妙融合', price: 168.00, image: 'img/boy(18).webp', category: 'boy'},
-                    				{ id: 138, name: '蓝莓芝士蛋糕', description: '清新蓝莓与醇厚芝士的美妙融合', price: 168.00, image: 'img/boy(19).webp', category: 'boy'},
-                    				{ id: 139, name: '蓝莓芝士蛋糕', description: '清新蓝莓与醇厚芝士的美妙融合', price: 168.00, image: 'img/boy(20).webp', category: 'boy'},
-                    				{ id: 140, name: '蓝莓芝士蛋糕', description: '清新蓝莓与醇厚芝士的美妙融合', price: 168.00, image: 'img/boy(21).webp', category: 'boy'},
+                       { id: 1, name: '草莓奶油蛋糕', description: '新鲜草莓与轻盈奶油的完美结合', price: 178.00, image: 'https://raw.githubusercontent.com/shuizuguanyuehui/sanyue.github.io/refs/heads/main/img/cake-man1.webp', category: 'fruit'},
+                       { id: 2, name: '草莓奶油蛋糕', description: '新鲜草莓与轻盈奶油的完美结合', price: 178.00, image: 'https://raw.githubusercontent.com/shuizuguanyuehui/sanyue.github.io/refs/heads/main/img/cake-man2.webp', category: 'fruit'},
+                       { id: 3, name: '草莓奶油蛋糕', description: '新鲜草莓与轻盈奶油的完美结合', price: 178.00, image: 'https://raw.githubusercontent.com/shuizuguanyuehui/sanyue.github.io/refs/heads/main/img/cake-man3.webp', category: 'fruit'},
+                       { id: 4, name: '草莓奶油蛋糕', description: '新鲜草莓与轻盈奶油的完美结合', price: 178.00, image: 'https://raw.githubusercontent.com/shuizuguanyuehui/sanyue.github.io/refs/heads/main/img/cake-man4.webp', category: 'fruit'},
+                       { id: 5, name: '草莓奶油蛋糕', description: '新鲜草莓与轻盈奶油的完美结合', price: 178.00, image: 'https://raw.githubusercontent.com/shuizuguanyuehui/sanyue.github.io/refs/heads/main/img/cake-man5.webp', category: 'fruit'},
+                       { id: 6, name: '草莓奶油蛋糕', description: '新鲜草莓与轻盈奶油的完美结合', price: 178.00, image: 'https://raw.githubusercontent.com/shuizuguanyuehui/sanyue.github.io/refs/heads/main/img/cake-man6.webp', category: 'fruit'},
+                       { id: 7, name: '草莓奶油蛋糕', description: '新鲜草莓与轻盈奶油的完美结合', price: 178.00, image: 'https://raw.githubusercontent.com/shuizuguanyuehui/sanyue.github.io/refs/heads/main/img/cake-man7.webp', category: 'fruit'},
+                       { id: 8, name: '草莓奶油蛋糕', description: '新鲜草莓与轻盈奶油的完美结合', price: 178.00, image: 'https://raw.githubusercontent.com/shuizuguanyuehui/sanyue.github.io/refs/heads/main/img/cake-man8.webp', category: 'fruit'},
+                       { id: 9, name: '草莓奶油蛋糕', description: '新鲜草莓与轻盈奶油的完美结合', price: 178.00, image: 'https://raw.githubusercontent.com/shuizuguanyuehui/sanyue.github.io/refs/heads/main/img/cake-man9.webp', category: 'fruit'},
+                       { id: 10, name: '草莓奶油蛋糕', description: '新鲜草莓与轻盈奶油的完美结合', price: 178.00, image: 'https://raw.githubusercontent.com/shuizuguanyuehui/sanyue.github.io/refs/heads/main/img/cake-man10.webp', category: 'fruit'},
+                       { id: 11, name: '草莓奶油蛋糕', description: '新鲜草莓与轻盈奶油的完美结合', price: 178.00, image: 'https://raw.githubusercontent.com/shuizuguanyuehui/sanyue.github.io/refs/heads/main/img/cake-man11.webp', category: 'fruit'},
+                       { id: 12, name: '草莓奶油蛋糕', description: '新鲜草莓与轻盈奶油的完美结合', price: 178.00, image: 'https://raw.githubusercontent.com/shuizuguanyuehui/sanyue.github.io/refs/heads/main/img/cake-man12.webp', category: 'fruit'},
+                       { id: 13, name: '草莓奶油蛋糕', description: '新鲜草莓与轻盈奶油的完美结合', price: 178.00, image: 'https://raw.githubusercontent.com/shuizuguanyuehui/sanyue.github.io/refs/heads/main/img/cake-man13.webp', category: 'fruit'},
+                       { id: 14, name: '草莓奶油蛋糕', description: '新鲜草莓与轻盈奶油的完美结合', price: 178.00, image: 'https://raw.githubusercontent.com/shuizuguanyuehui/sanyue.github.io/refs/heads/main/img/cake-man14.webp', category: 'fruit'},
+                       { id: 15, name: '草莓奶油蛋糕', description: '新鲜草莓与轻盈奶油的完美结合', price: 178.00, image: 'https://raw.githubusercontent.com/shuizuguanyuehui/sanyue.github.io/refs/heads/main/img/cake-man15.webp', category: 'fruit'},
+                       { id: 16, name: '草莓奶油蛋糕', description: '新鲜草莓与轻盈奶油的完美结合', price: 178.00, image: 'https://raw.githubusercontent.com/shuizuguanyuehui/sanyue.github.io/refs/heads/main/img/cake-man16.webp', category: 'fruit'},
+                       { id: 17, name: '草莓奶油蛋糕', description: '新鲜草莓与轻盈奶油的完美结合', price: 178.00, image: 'https://raw.githubusercontent.com/shuizuguanyuehui/sanyue.github.io/refs/heads/main/img/cake-man17.webp', category: 'fruit'},
+                       { id: 18, name: '草莓奶油蛋糕', description: '新鲜草莓与轻盈奶油的完美结合', price: 178.00, image: 'https://raw.githubusercontent.com/shuizuguanyuehui/sanyue.github.io/refs/heads/main/img/cake-man18.webp', category: 'fruit'},
+                       { id: 19, name: '草莓奶油蛋糕', description: '新鲜草莓与轻盈奶油的完美结合', price: 178.00, image: 'https://raw.githubusercontent.com/shuizuguanyuehui/sanyue.github.io/refs/heads/main/img/cake-man19.webp', category: 'fruit'},
+                       { id: 20, name: '草莓奶油蛋糕', description: '新鲜草莓与轻盈奶油的完美结合', price: 178.00, image: 'https://raw.githubusercontent.com/shuizuguanyuehui/sanyue.github.io/refs/heads/main/img/cake-man20.webp', category: 'fruit'},
+                       { id: 21, name: '草莓奶油蛋糕', description: '新鲜草莓与轻盈奶油的完美结合', price: 178.00, image: 'https://raw.githubusercontent.com/shuizuguanyuehui/sanyue.github.io/refs/heads/main/img/cake-man21.webp', category: 'fruit'},
+                       { id: 22, name: '草莓奶油蛋糕', description: '新鲜草莓与轻盈奶油的完美结合', price: 178.00, image: 'https://raw.githubusercontent.com/shuizuguanyuehui/sanyue.github.io/refs/heads/main/img/cake-man22.webp', category: 'fruit'},
+                       { id: 23, name: '草莓奶油蛋糕', description: '新鲜草莓与轻盈奶油的完美结合', price: 178.00, image: 'https://raw.githubusercontent.com/shuizuguanyuehui/sanyue.github.io/refs/heads/main/img/cake-man23.webp', category: 'fruit'},
+                       { id: 24, name: '草莓奶油蛋糕', description: '新鲜草莓与轻盈奶油的完美结合', price: 178.00, image: 'https://raw.githubusercontent.com/shuizuguanyuehui/sanyue.github.io/refs/heads/main/img/cake-man24.webp', category: 'fruit'},
+                       { id: 25, name: '草莓奶油蛋糕', description: '新鲜草莓与轻盈奶油的完美结合', price: 178.00, image: 'https://raw.githubusercontent.com/shuizuguanyuehui/sanyue.github.io/refs/heads/main/img/cake-man25.webp', category: 'fruit'},
+                       { id: 26, name: '草莓奶油蛋糕', description: '新鲜草莓与轻盈奶油的完美结合', price: 178.00, image: 'https://raw.githubusercontent.com/shuizuguanyuehui/sanyue.github.io/refs/heads/main/img/cake-man26.webp', category: 'fruit'},
+                       { id: 27, name: '草莓奶油蛋糕', description: '新鲜草莓与轻盈奶油的完美结合', price: 178.00, image: 'https://raw.githubusercontent.com/shuizuguanyuehui/sanyue.github.io/refs/heads/main/img/cake-man27.webp', category: 'fruit'},
+                       { id: 28, name: '草莓奶油蛋糕', description: '新鲜草莓与轻盈奶油的完美结合', price: 178.00, image: 'https://raw.githubusercontent.com/shuizuguanyuehui/sanyue.github.io/refs/heads/main/img/cake-man28.webp', category: 'fruit'},
+                       { id: 29, name: '草莓奶油蛋糕', description: '新鲜草莓与轻盈奶油的完美结合', price: 178.00, image: 'https://raw.githubusercontent.com/shuizuguanyuehui/sanyue.github.io/refs/heads/main/img/cake-man29.webp', category: 'fruit'},
+                       { id: 30, name: '草莓奶油蛋糕', description: '新鲜草莓与轻盈奶油的完美结合', price: 178.00, image: 'https://raw.githubusercontent.com/shuizuguanyuehui/sanyue.github.io/refs/heads/main/img/cake-man30.webp', category: 'fruit'},
+                       { id: 31, name: '草莓奶油蛋糕', description: '新鲜草莓与轻盈奶油的完美结合', price: 178.00, image: 'https://raw.githubusercontent.com/shuizuguanyuehui/sanyue.github.io/refs/heads/main/img/cake-man31.webp', category: 'fruit'},
+                        			{ id: 32, name: '巧克力松露蛋糕', description: '浓郁巧克力口感，松露般的质地', price: 218.00, image: 'https://raw.githubusercontent.com/shuizuguanyuehui/sanyue.github.io/refs/heads/main/img/cake-men1.webp', category: 'chocolate'},
+                        			{ id: 33, name: '巧克力松露蛋糕', description: '浓郁巧克力口感，松露般的质地', price: 218.00, image: 'https://raw.githubusercontent.com/shuizuguanyuehui/sanyue.github.io/refs/heads/main/img/cake-men2.webp', category: 'chocolate'},
+                        			{ id: 34, name: '巧克力松露蛋糕', description: '浓郁巧克力口感，松露般的质地', price: 218.00, image: 'https://raw.githubusercontent.com/shuizuguanyuehui/sanyue.github.io/refs/heads/main/img/cake-men3.webp', category: 'chocolate'},
+                        			{ id: 35, name: '巧克力松露蛋糕', description: '浓郁巧克力口感，松露般的质地', price: 218.00, image: 'https://raw.githubusercontent.com/shuizuguanyuehui/sanyue.github.io/refs/heads/main/img/cake-men4.webp', category: 'chocolate'},
+                        			{ id: 36, name: '巧克力松露蛋糕', description: '浓郁巧克力口感，松露般的质地', price: 218.00, image: 'https://raw.githubusercontent.com/shuizuguanyuehui/sanyue.github.io/refs/heads/main/img/cake-men5.webp', category: 'chocolate'},
+                        			{ id: 37, name: '巧克力松露蛋糕', description: '浓郁巧克力口感，松露般的质地', price: 218.00, image: 'https://raw.githubusercontent.com/shuizuguanyuehui/sanyue.github.io/refs/heads/main/img/cake-men6.webp', category: 'chocolate'},
+                        			{ id: 38, name: '巧克力松露蛋糕', description: '浓郁巧克力口感，松露般的质地', price: 218.00, image: 'https://raw.githubusercontent.com/shuizuguanyuehui/sanyue.github.io/refs/heads/main/img/cake-men7.webp', category: 'chocolate'},
+                        			{ id: 39, name: '巧克力松露蛋糕', description: '浓郁巧克力口感，松露般的质地', price: 218.00, image: 'https://raw.githubusercontent.com/shuizuguanyuehui/sanyue.github.io/refs/heads/main/img/cake-men8.webp', category: 'chocolate'},
+                        			{ id: 40, name: '巧克力松露蛋糕', description: '浓郁巧克力口感，松露般的质地', price: 218.00, image: 'https://raw.githubusercontent.com/shuizuguanyuehui/sanyue.github.io/refs/heads/main/img/cake-men9.webp', category: 'chocolate'},
+                        			{ id: 41, name: '巧克力松露蛋糕', description: '浓郁巧克力口感，松露般的质地', price: 218.00, image: 'https://raw.githubusercontent.com/shuizuguanyuehui/sanyue.github.io/refs/heads/main/img/cake-men10.webp', category: 'chocolate'},
+                        			{ id: 42, name: '巧克力松露蛋糕', description: '浓郁巧克力口感，松露般的质地', price: 218.00, image: 'https://raw.githubusercontent.com/shuizuguanyuehui/sanyue.github.io/refs/heads/main/img/cake-men11.webp', category: 'chocolate'},
+                        			{ id: 43, name: '巧克力松露蛋糕', description: '浓郁巧克力口感，松露般的质地', price: 218.00, image: 'https://raw.githubusercontent.com/shuizuguanyuehui/sanyue.github.io/refs/heads/main/img/cake-men12.webp', category: 'chocolate'},
+                        			{ id: 44, name: '巧克力松露蛋糕', description: '浓郁巧克力口感，松露般的质地', price: 218.00, image: 'https://raw.githubusercontent.com/shuizuguanyuehui/sanyue.github.io/refs/heads/main/img/cake-men13.webp', category: 'chocolate'},
+                        			{ id: 45, name: '巧克力松露蛋糕', description: '浓郁巧克力口感，松露般的质地', price: 218.00, image: 'https://raw.githubusercontent.com/shuizuguanyuehui/sanyue.github.io/refs/heads/main/img/cake-men14.webp', category: 'chocolate'},
+                        			{ id: 46, name: '巧克力松露蛋糕', description: '浓郁巧克力口感，松露般的质地', price: 218.00, image: 'https://raw.githubusercontent.com/shuizuguanyuehui/sanyue.github.io/refs/heads/main/img/cake-men15.webp', category: 'chocolate'},
+                        			{ id: 47, name: '巧克力松露蛋糕', description: '浓郁巧克力口感，松露般的质地', price: 218.00, image: 'https://raw.githubusercontent.com/shuizuguanyuehui/sanyue.github.io/refs/heads/main/img/cake-men16.webp', category: 'chocolate'},
+                        			{ id: 48, name: '巧克力松露蛋糕', description: '浓郁巧克力口感，松露般的质地', price: 218.00, image: 'https://raw.githubusercontent.com/shuizuguanyuehui/sanyue.github.io/refs/heads/main/img/cake-men17.webp', category: 'chocolate'},
+                        			{ id: 49, name: '巧克力松露蛋糕', description: '浓郁巧克力口感，松露般的质地', price: 218.00, image: 'https://raw.githubusercontent.com/shuizuguanyuehui/sanyue.github.io/refs/heads/main/img/cake-men18.webp', category: 'chocolate'},
+                        			{ id: 50, name: '巧克力松露蛋糕', description: '浓郁巧克力口感，松露般的质地', price: 218.00, image: 'https://raw.githubusercontent.com/shuizuguanyuehui/sanyue.github.io/refs/heads/main/img/cake-men19.webp', category: 'chocolate'},
+                        			{ id: 51, name: '巧克力松露蛋糕', description: '浓郁巧克力口感，松露般的质地', price: 218.00, image: 'https://raw.githubusercontent.com/shuizuguanyuehui/sanyue.github.io/refs/heads/main/img/cake-men20.webp', category: 'chocolate'},
+                        			{ id: 52, name: '巧克力松露蛋糕', description: '浓郁巧克力口感，松露般的质地', price: 218.00, image: 'https://raw.githubusercontent.com/shuizuguanyuehui/sanyue.github.io/refs/heads/main/img/cake-men21.webp', category: 'chocolate'},
+                        			{ id: 53, name: '巧克力松露蛋糕', description: '浓郁巧克力口感，松露般的质地', price: 218.00, image: 'https://raw.githubusercontent.com/shuizuguanyuehui/sanyue.github.io/refs/heads/main/img/cake-men22.webp', category: 'chocolate'},
+                        			{ id: 54, name: '巧克力松露蛋糕', description: '浓郁巧克力口感，松露般的质地', price: 218.00, image: 'https://raw.githubusercontent.com/shuizuguanyuehui/sanyue.github.io/refs/heads/main/img/cake-men23.webp', category: 'chocolate'},
+                        			{ id: 55, name: '巧克力松露蛋糕', description: '浓郁巧克力口感，松露般的质地', price: 218.00, image: 'https://raw.githubusercontent.com/shuizuguanyuehui/sanyue.github.io/refs/heads/main/img/cake-men24.webp', category: 'chocolate'},
+                        			{ id: 56, name: '巧克力松露蛋糕', description: '浓郁巧克力口感，松露般的质地', price: 218.00, image: 'https://raw.githubusercontent.com/shuizuguanyuehui/sanyue.github.io/refs/heads/main/img/cake-men25.webp', category: 'chocolate'},
+                        			{ id: 57, name: '巧克力松露蛋糕', description: '浓郁巧克力口感，松露般的质地', price: 218.00, image: 'https://raw.githubusercontent.com/shuizuguanyuehui/sanyue.github.io/refs/heads/main/img/cake-men26.webp', category: 'chocolate'},
+                        			{ id: 58, name: '巧克力松露蛋糕', description: '浓郁巧克力口感，松露般的质地', price: 218.00, image: 'https://raw.githubusercontent.com/shuizuguanyuehui/sanyue.github.io/refs/heads/main/img/cake-men27.webp', category: 'chocolate'},
+                        			{ id: 59, name: '巧克力松露蛋糕', description: '浓郁巧克力口感，松露般的质地', price: 218.00, image: 'https://raw.githubusercontent.com/shuizuguanyuehui/sanyue.github.io/refs/heads/main/img/cake-men28.webp', category: 'chocolate'},
+                        			{ id: 60, name: '巧克力松露蛋糕', description: '浓郁巧克力口感，松露般的质地', price: 218.00, image: 'https://raw.githubusercontent.com/shuizuguanyuehui/sanyue.github.io/refs/heads/main/img/cake-men29.webp', category: 'chocolate'},
+                        			{ id: 61, name: '巧克力松露蛋糕', description: '浓郁巧克力口感，松露般的质地', price: 218.00, image: 'https://raw.githubusercontent.com/shuizuguanyuehui/sanyue.github.io/refs/heads/main/img/cake-men30.webp', category: 'chocolate'},
+                        			{ id: 62, name: '巧克力松露蛋糕', description: '浓郁巧克力口感，松露般的质地', price: 218.00, image: 'https://raw.githubusercontent.com/shuizuguanyuehui/sanyue.github.io/refs/heads/main/img/cake-men31.webp', category: 'chocolate'},
+                        			{ id: 63, name: '巧克力松露蛋糕', description: '浓郁巧克力口感，松露般的质地', price: 218.00, image: 'https://raw.githubusercontent.com/shuizuguanyuehui/sanyue.github.io/refs/heads/main/img/cake-men32.webp', category: 'chocolate'},
+                        			{ id: 64, name: '巧克力松露蛋糕', description: '浓郁巧克力口感，松露般的质地', price: 218.00, image: 'https://raw.githubusercontent.com/shuizuguanyuehui/sanyue.github.io/refs/heads/main/img/cake-men33.webp', category: 'chocolate'},
+                        			{ id: 65, name: '巧克力松露蛋糕', description: '浓郁巧克力口感，松露般的质地', price: 218.00, image: 'https://raw.githubusercontent.com/shuizuguanyuehui/sanyue.github.io/refs/heads/main/img/cake-men34.webp', category: 'chocolate'},
+                        			{ id: 66, name: '巧克力松露蛋糕', description: '浓郁巧克力口感，松露般的质地', price: 218.00, image: 'https://raw.githubusercontent.com/shuizuguanyuehui/sanyue.github.io/refs/heads/main/img/cake-men35.webp', category: 'chocolate'},
+                        			{ id: 67, name: '巧克力松露蛋糕', description: '浓郁巧克力口感，松露般的质地', price: 218.00, image: 'https://raw.githubusercontent.com/shuizuguanyuehui/sanyue.github.io/refs/heads/main/img/cake-men36.webp', category: 'chocolate'},
+                        			{ id: 68, name: '巧克力松露蛋糕', description: '浓郁巧克力口感，松露般的质地', price: 218.00, image: 'https://raw.githubusercontent.com/shuizuguanyuehui/sanyue.github.io/refs/heads/main/img/cake-men37.webp', category: 'chocolate'},
+                        			{ id: 69, name: '巧克力松露蛋糕', description: '浓郁巧克力口感，松露般的质地', price: 218.00, image: 'https://raw.githubusercontent.com/shuizuguanyuehui/sanyue.github.io/refs/heads/main/img/cake-men38.webp', category: 'chocolate'},
+                        			{ id: 70, name: '巧克力松露蛋糕', description: '浓郁巧克力口感，松露般的质地', price: 218.00, image: 'https://raw.githubusercontent.com/shuizuguanyuehui/sanyue.github.io/refs/heads/main/img/cake-men39.webp', category: 'chocolate'},
+                        			{ id: 71, name: '巧克力松露蛋糕', description: '浓郁巧克力口感，松露般的质地', price: 218.00, image: 'https://raw.githubusercontent.com/shuizuguanyuehui/sanyue.github.io/refs/heads/main/img/cake-men40.webp', category: 'chocolate'},
+                        			{ id: 72, name: '巧克力松露蛋糕', description: '浓郁巧克力口感，松露般的质地', price: 218.00, image: 'https://raw.githubusercontent.com/shuizuguanyuehui/sanyue.github.io/refs/heads/main/img/cake-men41.webp', category: 'chocolate'},
+                        			{ id: 73, name: '巧克力松露蛋糕', description: '浓郁巧克力口感，松露般的质地', price: 218.00, image: 'https://raw.githubusercontent.com/shuizuguanyuehui/sanyue.github.io/refs/heads/main/img/cake-men42.webp', category: 'chocolate'},
+                        			{ id: 74, name: '巧克力松露蛋糕', description: '浓郁巧克力口感，松露般的质地', price: 218.00, image: 'https://raw.githubusercontent.com/shuizuguanyuehui/sanyue.github.io/refs/heads/main/img/cake-men43.webp', category: 'chocolate'},
+                        			{ id: 75, name: '巧克力松露蛋糕', description: '浓郁巧克力口感，松露般的质地', price: 218.00, image: 'https://raw.githubusercontent.com/shuizuguanyuehui/sanyue.github.io/refs/heads/main/img/cake-men44.webp', category: 'chocolate'},
+                        			{ id: 76, name: '巧克力松露蛋糕', description: '浓郁巧克力口感，松露般的质地', price: 218.00, image: 'https://raw.githubusercontent.com/shuizuguanyuehui/sanyue.github.io/refs/heads/main/img/cake-men45.webp', category: 'chocolate'},
+                        			{ id: 77, name: '巧克力松露蛋糕', description: '浓郁巧克力口感，松露般的质地', price: 218.00, image: 'https://raw.githubusercontent.com/shuizuguanyuehui/sanyue.github.io/refs/heads/main/img/cake-men46.webp', category: 'chocolate'},
+                        			{ id: 78, name: '巧克力松露蛋糕', description: '浓郁巧克力口感，松露般的质地', price: 218.00, image: 'https://raw.githubusercontent.com/shuizuguanyuehui/sanyue.github.io/refs/heads/main/img/cake-men47.webp', category: 'chocolate'},
+                        			{ id: 79, name: '无糖杏仁蛋糕', description: '低糖健康选择，杏仁香气浓郁', price: 198.00, image: 'https://raw.githubusercontent.com/shuizuguanyuehui/sanyue.github.io/refs/heads/main/img/OldMan1.webp', category: 'lowsugar'},
+                        			{ id: 80, name: '无糖杏仁蛋糕', description: '低糖健康选择，杏仁香气浓郁', price: 198.00, image: 'https://raw.githubusercontent.com/shuizuguanyuehui/sanyue.github.io/refs/heads/main/img/OldMan2.webp', category: 'lowsugar'},
+                        			{ id: 81, name: '无糖杏仁蛋糕', description: '低糖健康选择，杏仁香气浓郁', price: 198.00, image: 'https://raw.githubusercontent.com/shuizuguanyuehui/sanyue.github.io/refs/heads/main/img/OldMan3.webp', category: 'lowsugar'},
+                        			{ id: 82, name: '无糖杏仁蛋糕', description: '低糖健康选择，杏仁香气浓郁', price: 198.00, image: 'https://raw.githubusercontent.com/shuizuguanyuehui/sanyue.github.io/refs/heads/main/img/OldMan4.webp', category: 'lowsugar'},
+                        			{ id: 83, name: '无糖杏仁蛋糕', description: '低糖健康选择，杏仁香气浓郁', price: 198.00, image: 'https://raw.githubusercontent.com/shuizuguanyuehui/sanyue.github.io/refs/heads/main/img/OldMan5.webp', category: 'lowsugar'},
+                        			{ id: 84, name: '无糖杏仁蛋糕', description: '低糖健康选择，杏仁香气浓郁', price: 198.00, image: 'https://raw.githubusercontent.com/shuizuguanyuehui/sanyue.github.io/refs/heads/main/img/OldMan6.webp', category: 'lowsugar'},
+                        			{ id: 85, name: '无糖杏仁蛋糕', description: '低糖健康选择，杏仁香气浓郁', price: 198.00, image: 'https://raw.githubusercontent.com/shuizuguanyuehui/sanyue.github.io/refs/heads/main/img/OldMan7.webp', category: 'lowsugar'},
+                        			{ id: 86, name: '无糖杏仁蛋糕', description: '低糖健康选择，杏仁香气浓郁', price: 198.00, image: 'https://raw.githubusercontent.com/shuizuguanyuehui/sanyue.github.io/refs/heads/main/img/OldMan8.webp', category: 'lowsugar'},
+                        			{ id: 87, name: '无糖杏仁蛋糕', description: '低糖健康选择，杏仁香气浓郁', price: 198.00, image: 'https://raw.githubusercontent.com/shuizuguanyuehui/sanyue.github.io/refs/heads/main/img/OldMan9.webp', category: 'lowsugar'},
+                        			{ id: 88, name: '无糖杏仁蛋糕', description: '低糖健康选择，杏仁香气浓郁', price: 198.00, image: 'https://raw.githubusercontent.com/shuizuguanyuehui/sanyue.github.io/refs/heads/main/img/OldMan10.webp', category: 'lowsugar'},
+                        			{ id: 89, name: '无糖杏仁蛋糕', description: '低糖健康选择，杏仁香气浓郁', price: 198.00, image: 'https://raw.githubusercontent.com/shuizuguanyuehui/sanyue.github.io/refs/heads/main/img/OldMan11.webp', category: 'lowsugar'},
+                        			{ id: 90, name: '无糖杏仁蛋糕', description: '低糖健康选择，杏仁香气浓郁', price: 198.00, image: 'https://raw.githubusercontent.com/shuizuguanyuehui/sanyue.github.io/refs/heads/main/img/OldMan12.webp', category: 'lowsugar'},
+                        			{ id: 91, name: '无糖杏仁蛋糕', description: '低糖健康选择，杏仁香气浓郁', price: 198.00, image: 'https://raw.githubusercontent.com/shuizuguanyuehui/sanyue.github.io/refs/heads/main/img/OldMan13.webp', category: 'lowsugar'},
+                        			{ id: 92, name: '无糖杏仁蛋糕', description: '低糖健康选择，杏仁香气浓郁', price: 198.00, image: 'https://raw.githubusercontent.com/shuizuguanyuehui/sanyue.github.io/refs/heads/main/img/OldMan14.webp', category: 'lowsugar'},
+                        			{ id: 93, name: '无糖杏仁蛋糕', description: '低糖健康选择，杏仁香气浓郁', price: 198.00, image: 'https://raw.githubusercontent.com/shuizuguanyuehui/sanyue.github.io/refs/heads/main/img/OldMan15.webp', category: 'lowsugar'},
+                        			{ id: 94, name: '无糖杏仁蛋糕', description: '低糖健康选择，杏仁香气浓郁', price: 198.00, image: 'https://raw.githubusercontent.com/shuizuguanyuehui/sanyue.github.io/refs/heads/main/img/OldMan16.webp', category: 'lowsugar'},
+                        			{ id: 95, name: '无糖杏仁蛋糕', description: '低糖健康选择，杏仁香气浓郁', price: 198.00, image: 'https://raw.githubusercontent.com/shuizuguanyuehui/sanyue.github.io/refs/heads/main/img/OldMan17.webp', category: 'lowsugar'},
+                        			{ id: 96, name: '无糖杏仁蛋糕', description: '低糖健康选择，杏仁香气浓郁', price: 198.00, image: 'https://raw.githubusercontent.com/shuizuguanyuehui/sanyue.github.io/refs/heads/main/img/OldMan18.webp', category: 'lowsugar'},
+                        			{ id: 97, name: '无糖杏仁蛋糕', description: '低糖健康选择，杏仁香气浓郁', price: 198.00, image: 'https://raw.githubusercontent.com/shuizuguanyuehui/sanyue.github.io/refs/heads/main/img/OldMan19.webp', category: 'lowsugar'},
+                        			{ id: 98, name: '无糖杏仁蛋糕', description: '低糖健康选择，杏仁香气浓郁', price: 198.00, image: 'https://raw.githubusercontent.com/shuizuguanyuehui/sanyue.github.io/refs/heads/main/img/OldMan20.webp', category: 'lowsugar'},
+                        			{ id: 99, name: '无糖杏仁蛋糕', description: '低糖健康选择，杏仁香气浓郁', price: 198.00, image: 'https://raw.githubusercontent.com/shuizuguanyuehui/sanyue.github.io/refs/heads/main/img/OldMan21.webp', category: 'lowsugar'},
+                        			{ id: 100, name: '无糖杏仁蛋糕', description: '低糖健康选择，杏仁香气浓郁', price: 198.00, image: 'https://raw.githubusercontent.com/shuizuguanyuehui/sanyue.github.io/refs/heads/main/img/OldMan22.webp', category: 'lowsugar'},
+                        			{ id: 101, name: '无糖杏仁蛋糕', description: '低糖健康选择，杏仁香气浓郁', price: 198.00, image: 'https://raw.githubusercontent.com/shuizuguanyuehui/sanyue.github.io/refs/heads/main/img/OldMan23.webp', category: 'lowsugar'},
+                        			{ id: 102, name: '无糖杏仁蛋糕', description: '低糖健康选择，杏仁香气浓郁', price: 198.00, image: 'https://raw.githubusercontent.com/shuizuguanyuehui/sanyue.github.io/refs/heads/main/img/OldMan24.webp', category: 'lowsugar'},
+                        			{ id: 103, name: '无糖杏仁蛋糕', description: '低糖健康选择，杏仁香气浓郁', price: 198.00, image: 'https://raw.githubusercontent.com/shuizuguanyuehui/sanyue.github.io/refs/heads/main/img/OldMan25.webp', category: 'lowsugar'},
+                        			{ id: 104, name: '无糖杏仁蛋糕', description: '低糖健康选择，杏仁香气浓郁', price: 198.00, image: 'https://raw.githubusercontent.com/shuizuguanyuehui/sanyue.github.io/refs/heads/main/img/OldMan26.webp', category: 'lowsugar'},
+                        			{ id: 105, name: '无糖杏仁蛋糕', description: '低糖健康选择，杏仁香气浓郁', price: 198.00, image: 'https://raw.githubusercontent.com/shuizuguanyuehui/sanyue.github.io/refs/heads/main/img/OldMan27.webp', category: 'lowsugar'},
+                        			{ id: 106, name: '无糖杏仁蛋糕', description: '低糖健康选择，杏仁香气浓郁', price: 198.00, image: 'https://raw.githubusercontent.com/shuizuguanyuehui/sanyue.github.io/refs/heads/main/img/OldMan28.webp', category: 'lowsugar'},
+                        			{ id: 107, name: '无糖杏仁蛋糕', description: '低糖健康选择，杏仁香气浓郁', price: 198.00, image: 'https://raw.githubusercontent.com/shuizuguanyuehui/sanyue.github.io/refs/heads/main/img/OldMan29.webp', category: 'lowsugar'},
+                        			{ id: 108, name: '无糖杏仁蛋糕', description: '低糖健康选择，杏仁香气浓郁', price: 198.00, image: 'https://raw.githubusercontent.com/shuizuguanyuehui/sanyue.github.io/refs/heads/main/img/OldMan30.webp', category: 'lowsugar'},
+                        			{ id: 109, name: '无糖杏仁蛋糕', description: '低糖健康选择，杏仁香气浓郁', price: 198.00, image: 'https://raw.githubusercontent.com/shuizuguanyuehui/sanyue.github.io/refs/heads/main/img/OldMan31.webp', category: 'lowsugar'},
+                        			{ id: 110, name: '无糖杏仁蛋糕', description: '低糖健康选择，杏仁香气浓郁', price: 198.00, image: 'https://raw.githubusercontent.com/shuizuguanyuehui/sanyue.github.io/refs/heads/main/img/OldMan32.webp', category: 'lowsugar'},
+                        			{ id: 111, name: '无糖杏仁蛋糕', description: '低糖健康选择，杏仁香气浓郁', price: 198.00, image: 'https://raw.githubusercontent.com/shuizuguanyuehui/sanyue.github.io/refs/heads/main/img/OldMan33.webp', category: 'lowsugar'},
+                        			{ id: 112, name: '无糖杏仁蛋糕', description: '低糖健康选择，杏仁香气浓郁', price: 198.00, image: 'https://raw.githubusercontent.com/shuizuguanyuehui/sanyue.github.io/refs/heads/main/img/OldMan34.webp', category: 'lowsugar'},
+                        			{ id: 113, name: '无糖杏仁蛋糕', description: '低糖健康选择，杏仁香气浓郁', price: 198.00, image: 'https://raw.githubusercontent.com/shuizuguanyuehui/sanyue.github.io/refs/heads/main/img/OldMan35.webp', category: 'lowsugar'},
+                        			{ id: 114, name: '无糖杏仁蛋糕', description: '低糖健康选择，杏仁香气浓郁', price: 198.00, image: 'https://raw.githubusercontent.com/shuizuguanyuehui/sanyue.github.io/refs/heads/main/img/OldMan36.webp', category: 'lowsugar'},
+                        			{ id: 115, name: '无糖杏仁蛋糕', description: '低糖健康选择，杏仁香气浓郁', price: 198.00, image: 'https://raw.githubusercontent.com/shuizuguanyuehui/sanyue.github.io/refs/heads/main/img/OldMan37.webp', category: 'lowsugar'},
+                        			{ id: 116, name: '无糖杏仁蛋糕', description: '低糖健康选择，杏仁香气浓郁', price: 198.00, image: 'https://raw.githubusercontent.com/shuizuguanyuehui/sanyue.github.io/refs/heads/main/img/OldMan38.webp', category: 'lowsugar'},
+                        			{ id: 117, name: '无糖杏仁蛋糕', description: '低糖健康选择，杏仁香气浓郁', price: 198.00, image: 'https://raw.githubusercontent.com/shuizuguanyuehui/sanyue.github.io/refs/heads/main/img/OldMan39.webp', category: 'lowsugar'},
+                        			{ id: 118, name: '无糖杏仁蛋糕', description: '低糖健康选择，杏仁香气浓郁', price: 198.00, image: 'https://raw.githubusercontent.com/shuizuguanyuehui/sanyue.github.io/refs/heads/main/img/OldMan40.webp', category: 'lowsugar'},
+                        			{ id: 119, name: '无糖杏仁蛋糕', description: '低糖健康选择，杏仁香气浓郁', price: 198.00, image: 'https://raw.githubusercontent.com/shuizuguanyuehui/sanyue.github.io/refs/heads/main/img/OldMan41.webp', category: 'lowsugar'},
+                        			{ id: 120, name: '蓝莓芝士蛋糕', description: '清新蓝莓与醇厚芝士的美妙融合', price: 168.00, image: 'https://raw.githubusercontent.com/shuizuguanyuehui/sanyue.github.io/refs/heads/main/img/boy1.webp', category: 'boy'},
+                        			{ id: 121, name: '蓝莓芝士蛋糕', description: '清新蓝莓与醇厚芝士的美妙融合', price: 168.00, image: 'https://raw.githubusercontent.com/shuizuguanyuehui/sanyue.github.io/refs/heads/main/img/boy2.webp', category: 'boy'},
+                        			{ id: 122, name: '蓝莓芝士蛋糕', description: '清新蓝莓与醇厚芝士的美妙融合', price: 168.00, image: 'https://raw.githubusercontent.com/shuizuguanyuehui/sanyue.github.io/refs/heads/main/img/boy3.webp', category: 'boy'},
+                        			{ id: 123, name: '蓝莓芝士蛋糕', description: '清新蓝莓与醇厚芝士的美妙融合', price: 168.00, image: 'https://raw.githubusercontent.com/shuizuguanyuehui/sanyue.github.io/refs/heads/main/img/boy4.webp', category: 'boy'},
+                        			{ id: 124, name: '蓝莓芝士蛋糕', description: '清新蓝莓与醇厚芝士的美妙融合', price: 168.00, image: 'https://raw.githubusercontent.com/shuizuguanyuehui/sanyue.github.io/refs/heads/main/img/boy5.webp', category: 'boy'},
+                        			{ id: 125, name: '蓝莓芝士蛋糕', description: '清新蓝莓与醇厚芝士的美妙融合', price: 168.00, image: 'https://raw.githubusercontent.com/shuizuguanyuehui/sanyue.github.io/refs/heads/main/img/boy6.webp', category: 'boy'},
+                        			{ id: 126, name: '蓝莓芝士蛋糕', description: '清新蓝莓与醇厚芝士的美妙融合', price: 168.00, image: 'https://raw.githubusercontent.com/shuizuguanyuehui/sanyue.github.io/refs/heads/main/img/boy7.webp', category: 'boy'},
+                        			{ id: 127, name: '蓝莓芝士蛋糕', description: '清新蓝莓与醇厚芝士的美妙融合', price: 168.00, image: 'https://raw.githubusercontent.com/shuizuguanyuehui/sanyue.github.io/refs/heads/main/img/boy8.webp', category: 'boy'},
+                        			{ id: 128, name: '蓝莓芝士蛋糕', description: '清新蓝莓与醇厚芝士的美妙融合', price: 168.00, image: 'https://raw.githubusercontent.com/shuizuguanyuehui/sanyue.github.io/refs/heads/main/img/boy9.webp', category: 'boy'},
+                        			{ id: 129, name: '蓝莓芝士蛋糕', description: '清新蓝莓与醇厚芝士的美妙融合', price: 168.00, image: 'https://raw.githubusercontent.com/shuizuguanyuehui/sanyue.github.io/refs/heads/main/img/boy10.webp', category: 'boy'},
+                    				{ id: 130, name: '蓝莓芝士蛋糕', description: '清新蓝莓与醇厚芝士的美妙融合', price: 168.00, image: 'https://raw.githubusercontent.com/shuizuguanyuehui/sanyue.github.io/refs/heads/main/img/boy11.webp', category: 'boy'},
+                    				{ id: 131, name: '蓝莓芝士蛋糕', description: '清新蓝莓与醇厚芝士的美妙融合', price: 168.00, image: 'https://raw.githubusercontent.com/shuizuguanyuehui/sanyue.github.io/refs/heads/main/img/boy12.webp', category: 'boy'},
+                    				{ id: 132, name: '蓝莓芝士蛋糕', description: '清新蓝莓与醇厚芝士的美妙融合', price: 168.00, image: 'https://raw.githubusercontent.com/shuizuguanyuehui/sanyue.github.io/refs/heads/main/img/boy13.webp', category: 'boy'},
+                    				{ id: 133, name: '蓝莓芝士蛋糕', description: '清新蓝莓与醇厚芝士的美妙融合', price: 168.00, image: 'https://raw.githubusercontent.com/shuizuguanyuehui/sanyue.github.io/refs/heads/main/img/boy14.webp', category: 'boy'},
+                    				{ id: 134, name: '蓝莓芝士蛋糕', description: '清新蓝莓与醇厚芝士的美妙融合', price: 168.00, image: 'https://raw.githubusercontent.com/shuizuguanyuehui/sanyue.github.io/refs/heads/main/img/boy15.webp', category: 'boy'},
+                    				{ id: 135, name: '蓝莓芝士蛋糕', description: '清新蓝莓与醇厚芝士的美妙融合', price: 168.00, image: 'https://raw.githubusercontent.com/shuizuguanyuehui/sanyue.github.io/refs/heads/main/img/boy16.webp', category: 'boy'},
+                    				{ id: 136, name: '蓝莓芝士蛋糕', description: '清新蓝莓与醇厚芝士的美妙融合', price: 168.00, image: 'https://raw.githubusercontent.com/shuizuguanyuehui/sanyue.github.io/refs/heads/main/img/boy17.webp', category: 'boy'},
+                    				{ id: 137, name: '蓝莓芝士蛋糕', description: '清新蓝莓与醇厚芝士的美妙融合', price: 168.00, image: 'https://raw.githubusercontent.com/shuizuguanyuehui/sanyue.github.io/refs/heads/main/img/boy18.webp', category: 'boy'},
+                    				{ id: 138, name: '蓝莓芝士蛋糕', description: '清新蓝莓与醇厚芝士的美妙融合', price: 168.00, image: 'https://raw.githubusercontent.com/shuizuguanyuehui/sanyue.github.io/refs/heads/main/img/boy19.webp', category: 'boy'},
+                    				{ id: 139, name: '蓝莓芝士蛋糕', description: '清新蓝莓与醇厚芝士的美妙融合', price: 168.00, image: 'https://raw.githubusercontent.com/shuizuguanyuehui/sanyue.github.io/refs/heads/main/img/boy20.webp', category: 'boy'},
+                    				{ id: 140, name: '蓝莓芝士蛋糕', description: '清新蓝莓与醇厚芝士的美妙融合', price: 168.00, image: 'https://raw.githubusercontent.com/shuizuguanyuehui/sanyue.github.io/refs/heads/main/img/boy21.webp', category: 'boy'},
 									 
-                    				{ id: 141, name: '蓝莓芝士蛋糕', description: '清新蓝莓与醇厚芝士的美妙融合', price: 168.00, image: 'img/girl(1).webp', category: 'girl'},
-                    				{ id: 142, name: '蓝莓芝士蛋糕', description: '清新蓝莓与醇厚芝士的美妙融合', price: 168.00, image: 'img/girl(2).webp', category: 'girl'},
-                    				{ id: 143, name: '蓝莓芝士蛋糕', description: '清新蓝莓与醇厚芝士的美妙融合', price: 168.00, image: 'img/girl(3).webp', category: 'girl'},
-                    				{ id: 144, name: '蓝莓芝士蛋糕', description: '清新蓝莓与醇厚芝士的美妙融合', price: 168.00, image: 'img/girl(4).webp', category: 'girl'},
-                    				{ id: 145, name: '蓝莓芝士蛋糕', description: '清新蓝莓与醇厚芝士的美妙融合', price: 168.00, image: 'img/girl(5).webp', category: 'girl'},
-                    				{ id: 146, name: '蓝莓芝士蛋糕', description: '清新蓝莓与醇厚芝士的美妙融合', price: 168.00, image: 'img/girl(6).webp', category: 'girl'},
-                    				{ id: 147, name: '蓝莓芝士蛋糕', description: '清新蓝莓与醇厚芝士的美妙融合', price: 168.00, image: 'img/girl(7).webp', category: 'girl'},
-                    				{ id: 148, name: '蓝莓芝士蛋糕', description: '清新蓝莓与醇厚芝士的美妙融合', price: 168.00, image: 'img/girl(8).webp', category: 'girl'},
-                    				{ id: 149, name: '蓝莓芝士蛋糕', description: '清新蓝莓与醇厚芝士的美妙融合', price: 168.00, image: 'img/girl(9).webp', category: 'girl'},
-                    				{ id: 150, name: '蓝莓芝士蛋糕', description: '清新蓝莓与醇厚芝士的美妙融合', price: 168.00, image: 'img/girl(10).webp', category: 'girl'},
-									{ id: 151, name: '蓝莓芝士蛋糕', description: '清新蓝莓与醇厚芝士的美妙融合', price: 168.00, image: 'img/girl(11).webp', category: 'girl'},
-									{ id: 152, name: '蓝莓芝士蛋糕', description: '清新蓝莓与醇厚芝士的美妙融合', price: 168.00, image: 'img/girl(12).webp', category: 'girl'},
-									{ id: 153, name: '蓝莓芝士蛋糕', description: '清新蓝莓与醇厚芝士的美妙融合', price: 168.00, image: 'img/girl(13).webp', category: 'girl'},
-									{ id: 154, name: '蓝莓芝士蛋糕', description: '清新蓝莓与醇厚芝士的美妙融合', price: 168.00, image: 'img/girl(14).webp', category: 'girl'},
-									{ id: 155, name: '蓝莓芝士蛋糕', description: '清新蓝莓与醇厚芝士的美妙融合', price: 168.00, image: 'img/girl(15).webp', category: 'girl'},
-									{ id: 156, name: '蓝莓芝士蛋糕', description: '清新蓝莓与醇厚芝士的美妙融合', price: 168.00, image: 'img/girl(16).webp', category: 'girl'},
-									{ id: 157, name: '蓝莓芝士蛋糕', description: '清新蓝莓与醇厚芝士的美妙融合', price: 168.00, image: 'img/girl(17).webp', category: 'girl'},
-									{ id: 158, name: '蓝莓芝士蛋糕', description: '清新蓝莓与醇厚芝士的美妙融合', price: 168.00, image: 'img/girl(18).webp', category: 'girl'},
-									{ id: 159, name: '蓝莓芝士蛋糕', description: '清新蓝莓与醇厚芝士的美妙融合', price: 168.00, image: 'img/girl(19).webp', category: 'girl'},
-									{ id: 160, name: '蓝莓芝士蛋糕', description: '清新蓝莓与醇厚芝士的美妙融合', price: 168.00, image: 'img/girl(20).webp', category: 'girl'},
-									{ id: 161, name: '蓝莓芝士蛋糕', description: '清新蓝莓与醇厚芝士的美妙融合', price: 168.00, image: 'img/girl(21).webp', category: 'girl'},
-									{ id: 162, name: '蓝莓芝士蛋糕', description: '清新蓝莓与醇厚芝士的美妙融合', price: 168.00, image: 'img/girl(22).webp', category: 'girl'},
-									{ id: 163, name: '蓝莓芝士蛋糕', description: '清新蓝莓与醇厚芝士的美妙融合', price: 168.00, image: 'img/girl(23).webp', category: 'girl'},
-									{ id: 164, name: '蓝莓芝士蛋糕', description: '清新蓝莓与醇厚芝士的美妙融合', price: 168.00, image: 'img/girl(24).webp', category: 'girl'},
-									{ id: 165, name: '蓝莓芝士蛋糕', description: '清新蓝莓与醇厚芝士的美妙融合', price: 168.00, image: 'img/girl(25).webp', category: 'girl'},
-									{ id: 166, name: '蓝莓芝士蛋糕', description: '清新蓝莓与醇厚芝士的美妙融合', price: 168.00, image: 'img/girl(26).webp', category: 'girl'},
-									{ id: 167, name: '蓝莓芝士蛋糕', description: '清新蓝莓与醇厚芝士的美妙融合', price: 168.00, image: 'img/girl(27).webp', category: 'girl'},
-									{ id: 168, name: '蓝莓芝士蛋糕', description: '清新蓝莓与醇厚芝士的美妙融合', price: 168.00, image: 'img/girl(28).webp', category: 'girl'},
-									{ id: 169, name: '蓝莓芝士蛋糕', description: '清新蓝莓与醇厚芝士的美妙融合', price: 168.00, image: 'img/girl(29).webp', category: 'girl'},
-									{ id: 170, name: '蓝莓芝士蛋糕', description: '清新蓝莓与醇厚芝士的美妙融合', price: 168.00, image: 'img/girl(30).webp', category: 'girl'},
-									{ id: 171, name: '蓝莓芝士蛋糕', description: '清新蓝莓与醇厚芝士的美妙融合', price: 168.00, image: 'img/girl(31).webp', category: 'girl'},
-									{ id: 172, name: '蓝莓芝士蛋糕', description: '清新蓝莓与醇厚芝士的美妙融合', price: 168.00, image: 'img/girl(32).webp', category: 'girl'},
-									{ id: 173, name: '蓝莓芝士蛋糕', description: '清新蓝莓与醇厚芝士的美妙融合', price: 168.00, image: 'img/girl(33).webp', category: 'girl'},
-									{ id: 174, name: '蓝莓芝士蛋糕', description: '清新蓝莓与醇厚芝士的美妙融合', price: 168.00, image: 'img/girl(34).webp', category: 'girl'},
-									{ id: 175, name: '蓝莓芝士蛋糕', description: '清新蓝莓与醇厚芝士的美妙融合', price: 168.00, image: 'img/girl(35).webp', category: 'girl'},
-									{ id: 176, name: '蓝莓芝士蛋糕', description: '清新蓝莓与醇厚芝士的美妙融合', price: 168.00, image: 'img/girl(36).webp', category: 'girl'},
-									{ id: 177, name: '蓝莓芝士蛋糕', description: '清新蓝莓与醇厚芝士的美妙融合', price: 168.00, image: 'img/girl(37).webp', category: 'girl'},
-									{ id: 178, name: '蓝莓芝士蛋糕', description: '清新蓝莓与醇厚芝士的美妙融合', price: 168.00, image: 'img/girl(38).webp', category: 'girl'},
-									{ id: 179, name: '蓝莓芝士蛋糕', description: '清新蓝莓与醇厚芝士的美妙融合', price: 168.00, image: 'img/girl(39).webp', category: 'girl'},
+                    				{ id: 141, name: '蓝莓芝士蛋糕', description: '清新蓝莓与醇厚芝士的美妙融合', price: 168.00, image: 'https://raw.githubusercontent.com/shuizuguanyuehui/sanyue.github.io/refs/heads/main/img/girl1.webp', category: 'girl'},
+                    				{ id: 142, name: '蓝莓芝士蛋糕', description: '清新蓝莓与醇厚芝士的美妙融合', price: 168.00, image: 'https://raw.githubusercontent.com/shuizuguanyuehui/sanyue.github.io/refs/heads/main/img/girl2.webp', category: 'girl'},
+                    				{ id: 143, name: '蓝莓芝士蛋糕', description: '清新蓝莓与醇厚芝士的美妙融合', price: 168.00, image: 'https://raw.githubusercontent.com/shuizuguanyuehui/sanyue.github.io/refs/heads/main/img/girl3.webp', category: 'girl'},
+                    				{ id: 144, name: '蓝莓芝士蛋糕', description: '清新蓝莓与醇厚芝士的美妙融合', price: 168.00, image: 'https://raw.githubusercontent.com/shuizuguanyuehui/sanyue.github.io/refs/heads/main/img/girl4.webp', category: 'girl'},
+                    				{ id: 145, name: '蓝莓芝士蛋糕', description: '清新蓝莓与醇厚芝士的美妙融合', price: 168.00, image: 'https://raw.githubusercontent.com/shuizuguanyuehui/sanyue.github.io/refs/heads/main/img/girl5.webp', category: 'girl'},
+                    				{ id: 146, name: '蓝莓芝士蛋糕', description: '清新蓝莓与醇厚芝士的美妙融合', price: 168.00, image: 'https://raw.githubusercontent.com/shuizuguanyuehui/sanyue.github.io/refs/heads/main/img/girl6.webp', category: 'girl'},
+                    				{ id: 147, name: '蓝莓芝士蛋糕', description: '清新蓝莓与醇厚芝士的美妙融合', price: 168.00, image: 'https://raw.githubusercontent.com/shuizuguanyuehui/sanyue.github.io/refs/heads/main/img/girl7.webp', category: 'girl'},
+                    				{ id: 148, name: '蓝莓芝士蛋糕', description: '清新蓝莓与醇厚芝士的美妙融合', price: 168.00, image: 'https://raw.githubusercontent.com/shuizuguanyuehui/sanyue.github.io/refs/heads/main/img/girl8.webp', category: 'girl'},
+                    				{ id: 149, name: '蓝莓芝士蛋糕', description: '清新蓝莓与醇厚芝士的美妙融合', price: 168.00, image: 'https://raw.githubusercontent.com/shuizuguanyuehui/sanyue.github.io/refs/heads/main/img/girl9.webp', category: 'girl'},
+                    				{ id: 150, name: '蓝莓芝士蛋糕', description: '清新蓝莓与醇厚芝士的美妙融合', price: 168.00, image: 'https://raw.githubusercontent.com/shuizuguanyuehui/sanyue.github.io/refs/heads/main/img/girl10.webp', category: 'girl'},
+									{ id: 151, name: '蓝莓芝士蛋糕', description: '清新蓝莓与醇厚芝士的美妙融合', price: 168.00, image: 'https://raw.githubusercontent.com/shuizuguanyuehui/sanyue.github.io/refs/heads/main/img/girl11.webp', category: 'girl'},
+									{ id: 152, name: '蓝莓芝士蛋糕', description: '清新蓝莓与醇厚芝士的美妙融合', price: 168.00, image: 'https://raw.githubusercontent.com/shuizuguanyuehui/sanyue.github.io/refs/heads/main/img/girl12.webp', category: 'girl'},
+									{ id: 153, name: '蓝莓芝士蛋糕', description: '清新蓝莓与醇厚芝士的美妙融合', price: 168.00, image: 'https://raw.githubusercontent.com/shuizuguanyuehui/sanyue.github.io/refs/heads/main/img/girl13.webp', category: 'girl'},
+									{ id: 154, name: '蓝莓芝士蛋糕', description: '清新蓝莓与醇厚芝士的美妙融合', price: 168.00, image: 'https://raw.githubusercontent.com/shuizuguanyuehui/sanyue.github.io/refs/heads/main/img/girl14.webp', category: 'girl'},
+									{ id: 155, name: '蓝莓芝士蛋糕', description: '清新蓝莓与醇厚芝士的美妙融合', price: 168.00, image: 'https://raw.githubusercontent.com/shuizuguanyuehui/sanyue.github.io/refs/heads/main/img/girl15.webp', category: 'girl'},
+									{ id: 156, name: '蓝莓芝士蛋糕', description: '清新蓝莓与醇厚芝士的美妙融合', price: 168.00, image: 'https://raw.githubusercontent.com/shuizuguanyuehui/sanyue.github.io/refs/heads/main/img/girl16.webp', category: 'girl'},
+									{ id: 157, name: '蓝莓芝士蛋糕', description: '清新蓝莓与醇厚芝士的美妙融合', price: 168.00, image: 'https://raw.githubusercontent.com/shuizuguanyuehui/sanyue.github.io/refs/heads/main/img/girl17.webp', category: 'girl'},
+									{ id: 158, name: '蓝莓芝士蛋糕', description: '清新蓝莓与醇厚芝士的美妙融合', price: 168.00, image: 'https://raw.githubusercontent.com/shuizuguanyuehui/sanyue.github.io/refs/heads/main/img/girl18.webp', category: 'girl'},
+									{ id: 159, name: '蓝莓芝士蛋糕', description: '清新蓝莓与醇厚芝士的美妙融合', price: 168.00, image: 'https://raw.githubusercontent.com/shuizuguanyuehui/sanyue.github.io/refs/heads/main/img/girl19.webp', category: 'girl'},
+									{ id: 160, name: '蓝莓芝士蛋糕', description: '清新蓝莓与醇厚芝士的美妙融合', price: 168.00, image: 'https://raw.githubusercontent.com/shuizuguanyuehui/sanyue.github.io/refs/heads/main/img/girl20.webp', category: 'girl'},
+									{ id: 161, name: '蓝莓芝士蛋糕', description: '清新蓝莓与醇厚芝士的美妙融合', price: 168.00, image: 'https://raw.githubusercontent.com/shuizuguanyuehui/sanyue.github.io/refs/heads/main/img/girl21.webp', category: 'girl'},
+									{ id: 162, name: '蓝莓芝士蛋糕', description: '清新蓝莓与醇厚芝士的美妙融合', price: 168.00, image: 'https://raw.githubusercontent.com/shuizuguanyuehui/sanyue.github.io/refs/heads/main/img/girl22.webp', category: 'girl'},
+									{ id: 163, name: '蓝莓芝士蛋糕', description: '清新蓝莓与醇厚芝士的美妙融合', price: 168.00, image: 'https://raw.githubusercontent.com/shuizuguanyuehui/sanyue.github.io/refs/heads/main/img/girl23.webp', category: 'girl'},
+									{ id: 164, name: '蓝莓芝士蛋糕', description: '清新蓝莓与醇厚芝士的美妙融合', price: 168.00, image: 'https://raw.githubusercontent.com/shuizuguanyuehui/sanyue.github.io/refs/heads/main/img/girl24.webp', category: 'girl'},
+									{ id: 165, name: '蓝莓芝士蛋糕', description: '清新蓝莓与醇厚芝士的美妙融合', price: 168.00, image: 'https://raw.githubusercontent.com/shuizuguanyuehui/sanyue.github.io/refs/heads/main/img/girl25.webp', category: 'girl'},
+									{ id: 166, name: '蓝莓芝士蛋糕', description: '清新蓝莓与醇厚芝士的美妙融合', price: 168.00, image: 'https://raw.githubusercontent.com/shuizuguanyuehui/sanyue.github.io/refs/heads/main/img/girl26.webp', category: 'girl'},
+									{ id: 167, name: '蓝莓芝士蛋糕', description: '清新蓝莓与醇厚芝士的美妙融合', price: 168.00, image: 'https://raw.githubusercontent.com/shuizuguanyuehui/sanyue.github.io/refs/heads/main/img/girl27.webp', category: 'girl'},
+									{ id: 168, name: '蓝莓芝士蛋糕', description: '清新蓝莓与醇厚芝士的美妙融合', price: 168.00, image: 'https://raw.githubusercontent.com/shuizuguanyuehui/sanyue.github.io/refs/heads/main/img/girl28.webp', category: 'girl'},
+									{ id: 169, name: '蓝莓芝士蛋糕', description: '清新蓝莓与醇厚芝士的美妙融合', price: 168.00, image: 'https://raw.githubusercontent.com/shuizuguanyuehui/sanyue.github.io/refs/heads/main/img/girl29.webp', category: 'girl'},
+									{ id: 170, name: '蓝莓芝士蛋糕', description: '清新蓝莓与醇厚芝士的美妙融合', price: 168.00, image: 'https://raw.githubusercontent.com/shuizuguanyuehui/sanyue.github.io/refs/heads/main/img/girl30.webp', category: 'girl'},
+									{ id: 171, name: '蓝莓芝士蛋糕', description: '清新蓝莓与醇厚芝士的美妙融合', price: 168.00, image: 'https://raw.githubusercontent.com/shuizuguanyuehui/sanyue.github.io/refs/heads/main/img/girl31.webp', category: 'girl'},
+									{ id: 172, name: '蓝莓芝士蛋糕', description: '清新蓝莓与醇厚芝士的美妙融合', price: 168.00, image: 'https://raw.githubusercontent.com/shuizuguanyuehui/sanyue.github.io/refs/heads/main/img/girl32.webp', category: 'girl'},
+									{ id: 173, name: '蓝莓芝士蛋糕', description: '清新蓝莓与醇厚芝士的美妙融合', price: 168.00, image: 'https://raw.githubusercontent.com/shuizuguanyuehui/sanyue.github.io/refs/heads/main/img/girl33.webp', category: 'girl'},
+									{ id: 174, name: '蓝莓芝士蛋糕', description: '清新蓝莓与醇厚芝士的美妙融合', price: 168.00, image: 'https://raw.githubusercontent.com/shuizuguanyuehui/sanyue.github.io/refs/heads/main/img/girl34.webp', category: 'girl'},
+									{ id: 175, name: '蓝莓芝士蛋糕', description: '清新蓝莓与醇厚芝士的美妙融合', price: 168.00, image: 'https://raw.githubusercontent.com/shuizuguanyuehui/sanyue.github.io/refs/heads/main/img/girl35.webp', category: 'girl'},
+									{ id: 176, name: '蓝莓芝士蛋糕', description: '清新蓝莓与醇厚芝士的美妙融合', price: 168.00, image: 'https://raw.githubusercontent.com/shuizuguanyuehui/sanyue.github.io/refs/heads/main/img/girl36.webp', category: 'girl'},
+									{ id: 177, name: '蓝莓芝士蛋糕', description: '清新蓝莓与醇厚芝士的美妙融合', price: 168.00, image: 'https://raw.githubusercontent.com/shuizuguanyuehui/sanyue.github.io/refs/heads/main/img/girl37.webp', category: 'girl'},
+									{ id: 178, name: '蓝莓芝士蛋糕', description: '清新蓝莓与醇厚芝士的美妙融合', price: 168.00, image: 'https://raw.githubusercontent.com/shuizuguanyuehui/sanyue.github.io/refs/heads/main/img/girl38.webp', category: 'girl'},
+									{ id: 179, name: '蓝莓芝士蛋糕', description: '清新蓝莓与醇厚芝士的美妙融合', price: 168.00, image: 'https://raw.githubusercontent.com/shuizuguanyuehui/sanyue.github.io/refs/heads/main/img/girl39.webp', category: 'girl'},
 									
-									{ id: 180, name: '蓝莓芝士蛋糕', description: '清新蓝莓与醇厚芝士的美妙融合', price: 168.00, image: 'img/boy(22).webp', category: 'boy'},
-									{ id: 181, name: '蓝莓芝士蛋糕', description: '清新蓝莓与醇厚芝士的美妙融合', price: 168.00, image: 'img/boy(23).webp', category: 'boy'},
-									{ id: 182, name: '蓝莓芝士蛋糕', description: '清新蓝莓与醇厚芝士的美妙融合', price: 168.00, image: 'img/boy(24).webp', category: 'boy'},
-									{ id: 183, name: '蓝莓芝士蛋糕', description: '清新蓝莓与醇厚芝士的美妙融合', price: 168.00, image: 'img/boy(25).webp', category: 'boy'},
-									{ id: 184, name: '蓝莓芝士蛋糕', description: '清新蓝莓与醇厚芝士的美妙融合', price: 168.00, image: 'img/boy(26).webp', category: 'boy'},
-									{ id: 185, name: '蓝莓芝士蛋糕', description: '清新蓝莓与醇厚芝士的美妙融合', price: 168.00, image: 'img/boy(27).webp', category: 'boy'},
-									{ id: 186, name: '蓝莓芝士蛋糕', description: '清新蓝莓与醇厚芝士的美妙融合', price: 168.00, image: 'img/boy(28).webp', category: 'boy'},
-									{ id: 187, name: '蓝莓芝士蛋糕', description: '清新蓝莓与醇厚芝士的美妙融合', price: 168.00, image: 'img/boy(29).webp', category: 'boy'},
-									{ id: 188, name: '蓝莓芝士蛋糕', description: '清新蓝莓与醇厚芝士的美妙融合', price: 168.00, image: 'img/boy(30).webp', category: 'boy'},
-									{ id: 189, name: '蓝莓芝士蛋糕', description: '清新蓝莓与醇厚芝士的美妙融合', price: 168.00, image: 'img/boy(31).webp', category: 'boy'},
-									{ id: 190, name: '蓝莓芝士蛋糕', description: '清新蓝莓与醇厚芝士的美妙融合', price: 168.00, image: 'img/boy(32).webp', category: 'boy'},
-									{ id: 191, name: '蓝莓芝士蛋糕', description: '清新蓝莓与醇厚芝士的美妙融合', price: 168.00, image: 'img/boy(33).webp', category: 'boy'},
-									{ id: 192, name: '蓝莓芝士蛋糕', description: '清新蓝莓与醇厚芝士的美妙融合', price: 168.00, image: 'img/boy(34).webp', category: 'boy'},
-									{ id: 193, name: '蓝莓芝士蛋糕', description: '清新蓝莓与醇厚芝士的美妙融合', price: 168.00, image: 'img/boy(35).webp', category: 'boy'},
-									{ id: 194, name: '蓝莓芝士蛋糕', description: '清新蓝莓与醇厚芝士的美妙融合', price: 168.00, image: 'img/boy(36).webp', category: 'boy'},
-									{ id: 195, name: '蓝莓芝士蛋糕', description: '清新蓝莓与醇厚芝士的美妙融合', price: 168.00, image: 'img/boy(37).webp', category: 'boy'},
-									{ id: 196, name: '蓝莓芝士蛋糕', description: '清新蓝莓与醇厚芝士的美妙融合', price: 168.00, image: 'img/boy(38).webp', category: 'boy'},
-									{ id: 197, name: '蓝莓芝士蛋糕', description: '清新蓝莓与醇厚芝士的美妙融合', price: 168.00, image: 'img/boy(39).webp', category: 'boy'},
-									{ id: 198, name: '蓝莓芝士蛋糕', description: '清新蓝莓与醇厚芝士的美妙融合', price: 168.00, image: 'img/boy(40).webp', category: 'boy'}
+									{ id: 180, name: '蓝莓芝士蛋糕', description: '清新蓝莓与醇厚芝士的美妙融合', price: 168.00, image: 'https://raw.githubusercontent.com/shuizuguanyuehui/sanyue.github.io/refs/heads/main/img/boy22.webp', category: 'boy'},
+									{ id: 181, name: '蓝莓芝士蛋糕', description: '清新蓝莓与醇厚芝士的美妙融合', price: 168.00, image: 'https://raw.githubusercontent.com/shuizuguanyuehui/sanyue.github.io/refs/heads/main/img/boy23.webp', category: 'boy'},
+									{ id: 182, name: '蓝莓芝士蛋糕', description: '清新蓝莓与醇厚芝士的美妙融合', price: 168.00, image: 'https://raw.githubusercontent.com/shuizuguanyuehui/sanyue.github.io/refs/heads/main/img/boy24.webp', category: 'boy'},
+									{ id: 183, name: '蓝莓芝士蛋糕', description: '清新蓝莓与醇厚芝士的美妙融合', price: 168.00, image: 'https://raw.githubusercontent.com/shuizuguanyuehui/sanyue.github.io/refs/heads/main/img/boy25.webp', category: 'boy'},
+									{ id: 184, name: '蓝莓芝士蛋糕', description: '清新蓝莓与醇厚芝士的美妙融合', price: 168.00, image: 'https://raw.githubusercontent.com/shuizuguanyuehui/sanyue.github.io/refs/heads/main/img/boy26.webp', category: 'boy'},
+									{ id: 185, name: '蓝莓芝士蛋糕', description: '清新蓝莓与醇厚芝士的美妙融合', price: 168.00, image: 'https://raw.githubusercontent.com/shuizuguanyuehui/sanyue.github.io/refs/heads/main/img/boy27.webp', category: 'boy'},
+									{ id: 186, name: '蓝莓芝士蛋糕', description: '清新蓝莓与醇厚芝士的美妙融合', price: 168.00, image: 'https://raw.githubusercontent.com/shuizuguanyuehui/sanyue.github.io/refs/heads/main/img/boy28.webp', category: 'boy'},
+									{ id: 187, name: '蓝莓芝士蛋糕', description: '清新蓝莓与醇厚芝士的美妙融合', price: 168.00, image: 'https://raw.githubusercontent.com/shuizuguanyuehui/sanyue.github.io/refs/heads/main/img/boy29.webp', category: 'boy'},
+									{ id: 188, name: '蓝莓芝士蛋糕', description: '清新蓝莓与醇厚芝士的美妙融合', price: 168.00, image: 'https://raw.githubusercontent.com/shuizuguanyuehui/sanyue.github.io/refs/heads/main/img/boy30.webp', category: 'boy'},
+									{ id: 189, name: '蓝莓芝士蛋糕', description: '清新蓝莓与醇厚芝士的美妙融合', price: 168.00, image: 'https://raw.githubusercontent.com/shuizuguanyuehui/sanyue.github.io/refs/heads/main/img/boy31.webp', category: 'boy'},
+									{ id: 190, name: '蓝莓芝士蛋糕', description: '清新蓝莓与醇厚芝士的美妙融合', price: 168.00, image: 'https://raw.githubusercontent.com/shuizuguanyuehui/sanyue.github.io/refs/heads/main/img/boy32.webp', category: 'boy'},
+									{ id: 191, name: '蓝莓芝士蛋糕', description: '清新蓝莓与醇厚芝士的美妙融合', price: 168.00, image: 'https://raw.githubusercontent.com/shuizuguanyuehui/sanyue.github.io/refs/heads/main/img/boy33.webp', category: 'boy'},
+									{ id: 192, name: '蓝莓芝士蛋糕', description: '清新蓝莓与醇厚芝士的美妙融合', price: 168.00, image: 'https://raw.githubusercontent.com/shuizuguanyuehui/sanyue.github.io/refs/heads/main/img/boy34.webp', category: 'boy'},
+									{ id: 193, name: '蓝莓芝士蛋糕', description: '清新蓝莓与醇厚芝士的美妙融合', price: 168.00, image: 'https://raw.githubusercontent.com/shuizuguanyuehui/sanyue.github.io/refs/heads/main/img/boy35.webp', category: 'boy'},
+									{ id: 194, name: '蓝莓芝士蛋糕', description: '清新蓝莓与醇厚芝士的美妙融合', price: 168.00, image: 'https://raw.githubusercontent.com/shuizuguanyuehui/sanyue.github.io/refs/heads/main/img/boy36.webp', category: 'boy'},
+									{ id: 195, name: '蓝莓芝士蛋糕', description: '清新蓝莓与醇厚芝士的美妙融合', price: 168.00, image: 'https://raw.githubusercontent.com/shuizuguanyuehui/sanyue.github.io/refs/heads/main/img/boy37.webp', category: 'boy'},
+									{ id: 196, name: '蓝莓芝士蛋糕', description: '清新蓝莓与醇厚芝士的美妙融合', price: 168.00, image: 'https://raw.githubusercontent.com/shuizuguanyuehui/sanyue.github.io/refs/heads/main/img/boy38.webp', category: 'boy'},
+									{ id: 197, name: '蓝莓芝士蛋糕', description: '清新蓝莓与醇厚芝士的美妙融合', price: 168.00, image: 'https://raw.githubusercontent.com/shuizuguanyuehui/sanyue.github.io/refs/heads/main/img/boy39.webp', category: 'boy'},
+									{ id: 198, name: '蓝莓芝士蛋糕', description: '清新蓝莓与醇厚芝士的美妙融合', price: 168.00, image: 'https://raw.githubusercontent.com/shuizuguanyuehui/sanyue.github.io/refs/heads/main/img/boy40.webp', category: 'boy'}
                         
         ];
 		
 		
 
 
-        function createProductCard(product) {
-            const card = document.createElement('div');
+        function createProductCardproduct {
+            const card = document.createElement'div';
             card.className = 'product-card';
             
-            const image = document.createElement('img');
+            const image = document.createElement'img';
             image.src = product.image;
             image.alt = product.name;
             
-            const badge = document.createElement('div');
+            const badge = document.createElement'div';
             
-            card.appendChild(image);
-            card.appendChild(badge);
+            card.appendChildimage;
+            card.appendChildbadge;
             
-            card.addEventListener('click', () => openModal(product.image));
+            card.addEventListener'click',  => openModalproduct.image;
             
             return card;
         }
 
-        function filterProducts(category) {
-            const productGrid = document.getElementById('product-grid');
+        function filterProductscategory {
+            const productGrid = document.getElementById'product-grid';
             productGrid.innerHTML = '';
 
-            if (category === 'seasonal') {
-                const videoContainer = document.createElement('div');
+            if category === 'seasonal' {
+                const videoContainer = document.createElement'div';
                 videoContainer.className = 'video-container';
                 videoContainer.innerHTML = `
                     <video width="100%" height="100%" autoplay loop playsinline>
                         <source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4" type="video/mp4">
                     </video>
                 `;
-                productGrid.appendChild(videoContainer);
+                productGrid.appendChildvideoContainer;
 
-                const video = videoContainer.querySelector('video');
+                const video = videoContainer.querySelector'video';
                 video.muted = true;
-                video.play().then(() => {
+                video.play.then => {
                     video.muted = false;
-                }).catch(error => {
-                    console.log("Auto-play was prevented");
-                    const playButton = document.createElement('button');
+                }.catcherror => {
+                    console.log"Auto-play was prevented";
+                    const playButton = document.createElement'button';
                     playButton.textContent = '点击播放视频';
                     playButton.style.position = 'absolute';
                     playButton.style.top = '50%';
                     playButton.style.left = '50%';
-                    playButton.style.transform = 'translate(-50%, -50%)';
-                    videoContainer.appendChild(playButton);
-                    playButton.addEventListener('click', () => {
+                    playButton.style.transform = 'translate-50%, -50%';
+                    videoContainer.appendChildplayButton;
+                    playButton.addEventListener'click',  => {
                         video.muted = false;
-                        video.play();
-                        playButton.remove();
-                    });
-                });
+                        video.play;
+                        playButton.remove;
+                    };
+                };
             }
 
-            if (category === 'diy') {
-                const shopInfo = document.createElement('div');
+            if category === 'diy' {
+                const shopInfo = document.createElement'div';
                 shopInfo.className = 'shop-info';
                 shopInfo.innerHTML = `
                     <h2>叁月的店铺</h2>
@@ -629,64 +629,64 @@
                     <p>电话：13615599940</p>
                     <p>营业时间：周一至周日 8:50 - 20:00</p>
                 `;
-                productGrid.appendChild(shopInfo);
+                productGrid.appendChildshopInfo;
             }
 
-            const filteredProducts = category === 'all' ? products : products.filter(product => product.category === category);
-            filteredProducts.forEach(product => {
-                const card = createProductCard(product);
-                productGrid.appendChild(card);
-            });
+            const filteredProducts = category === 'all' ? products : products.filterproduct => product.category === category;
+            filteredProducts.forEachproduct => {
+                const card = createProductCardproduct;
+                productGrid.appendChildcard;
+            };
         }
 
-        function initCategories() {
-            const categoryButtons = document.querySelectorAll('.category-btn');
-            categoryButtons.forEach(button => {
-                button.addEventListener('click', () => {
-                    categoryButtons.forEach(btn => btn.classList.remove('active'));
-                    button.classList.add('active');
-                    filterProducts(button.dataset.category);
-                });
-            });
+        function initCategories {
+            const categoryButtons = document.querySelectorAll'.category-btn';
+            categoryButtons.forEachbutton => {
+                button.addEventListener'click',  => {
+                    categoryButtons.forEachbtn => btn.classList.remove'active';
+                    button.classList.add'active';
+                    filterProductsbutton.dataset.category;
+                };
+            };
         }
 
-        const modal = document.getElementById('imageModal');
-        const modalImg = document.getElementById('modalImage');
-        const closeBtn = document.querySelector('.close');
+        const modal = document.getElementById'imageModal';
+        const modalImg = document.getElementById'modalImage';
+        const closeBtn = document.querySelector'.close';
 
-        function openModal(imageSrc) {
+        function openModalimageSrc {
             modal.style.display = 'block';
             modalImg.src = imageSrc;
         }
 
-        closeBtn.addEventListener('click', () => {
+        closeBtn.addEventListener'click',  => {
             modal.style.display = 'none';
-        });
+        };
 
-        window.addEventListener('click', (event) => {
-            if (event.target === modal) {
+        window.addEventListener'click', event => {
+            if event.target === modal {
                 modal.style.display = 'none';
             }
-        });
+        };
 
 
         // 添加雪花效果
-        const snowContainer = document.getElementById('snow');
-        for (let i = 0; i < 50; i++) {
-            const snowflake = document.createElement('div');
+        const snowContainer = document.getElementById'snow';
+        for let i = 0; i < 50; i++ {
+            const snowflake = document.createElement'div';
             snowflake.className = 'snowflake';
-            snowflake.style.left = `${Math.random() * 100}%`;
-            snowflake.style.opacity = Math.random();
-            snowflake.style.fontSize = `${Math.random() * 10 + 10}px`;
-            snowflake.style.animationDuration = `${Math.random() * 3 + 2}s`;
-            snowflake.style.animationDelay = `${Math.random() * 2}s`;
+            snowflake.style.left = `${Math.random * 100}%`;
+            snowflake.style.opacity = Math.random;
+            snowflake.style.fontSize = `${Math.random * 10 + 10}px`;
+            snowflake.style.animationDuration = `${Math.random * 3 + 2}s`;
+            snowflake.style.animationDelay = `${Math.random * 2}s`;
             snowflake.innerHTML = '❄';
-            snowContainer.appendChild(snowflake);
+            snowContainer.appendChildsnowflake;
         }
 
         // 初始化页面
-        filterProducts('all');
-        initCategories();
+        filterProducts'all';
+        initCategories;
     </script>
 </body>
 </html>
