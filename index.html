@@ -202,8 +202,6 @@
             z-index: 10;
         }
 
-        
-
         @media (min-width: 768px) {
             .product-grid {
                 grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -263,7 +261,6 @@
         <div class="product-grid">
             <!-- 产品卡片动态生成 -->
         </div>
-
     </main>
 
     <div id="modal" class="modal">
@@ -272,7 +269,7 @@
     </div>
 
     <script>
-        const products = [
+         const products = [
         			                       { id: 1, name: '草莓奶油蛋糕', description: '新鲜草莓与轻盈奶油的完美结合', price: 178.00, image: 'https://raw.githubusercontent.com/shuizuguanyuehui/sanyue.github.io/refs/heads/main/img/cake-man1.webp', category: 'fruit'},
         			                       { id: 2, name: '草莓奶油蛋糕', description: '新鲜草莓与轻盈奶油的完美结合', price: 178.00, image: 'https://raw.githubusercontent.com/shuizuguanyuehui/sanyue.github.io/refs/heads/main/img/cake-man2.webp', category: 'fruit'},
         			                       { id: 3, name: '草莓奶油蛋糕', description: '新鲜草莓与轻盈奶油的完美结合', price: 178.00, image: 'https://raw.githubusercontent.com/shuizuguanyuehui/sanyue.github.io/refs/heads/main/img/cake-man3.webp', category: 'fruit'},
@@ -487,7 +484,7 @@
             const card = document.createElement('div');
             card.className = 'product-card';
 
-            const image = document.createElement('img');
+            const image = new Image();
             image.src = product.image;
             image.alt = product.name;
             image.loading = 'lazy';
@@ -495,15 +492,13 @@
                 this.src = 'https://raw.githubusercontent.com/shuizuguanyuehui/sanyue.github.io/refs/heads/main/img/placeholder.webp';
             };
 
-            const badge = document.createElement('div');
-
             const title = document.createElement('div');
+            title.textContent = product.name;
             title.style.fontSize = '0.9em';
             title.style.padding = '0.5em';
             title.style.textAlign = 'center';
 
             card.appendChild(image);
-            card.appendChild(badge);
             card.appendChild(title);
 
             card.addEventListener('click', () => {
@@ -538,6 +533,7 @@
             modal.style.display = 'none';
         });
 
+   
         document.addEventListener('DOMContentLoaded', () => {
             renderProducts(); // 初始化渲染所有产品
         });
