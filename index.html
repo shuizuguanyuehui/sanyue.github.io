@@ -538,7 +538,9 @@
             modal.style.display = 'none';
         });
 
-        renderProducts(); // 初始化渲染所有产品
+        document.addEventListener('DOMContentLoaded', () => {
+            renderProducts(); // 初始化渲染所有产品
+        });
     </script>
 </body>
 </html>
