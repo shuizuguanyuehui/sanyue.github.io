@@ -42,7 +42,6 @@
         }
 
         nav {
-            display: flex;
             justify-content: space-between;
             align-items: center;
             max-width: 1200px;
@@ -53,6 +52,7 @@
             font-size: 1.5rem;
             margin: 0;
             color: #fff;
+			text-align: ;
         }
 
         nav ul {
@@ -186,11 +186,6 @@
             position: relative;
         }
 
-        .christmas-title {
-            color: #c41e3a;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
-        }
-
         @media (max-width: 480px) {
             .product-grid {
                 grid-template-columns: repeat(2, 1fr);
@@ -212,7 +207,6 @@
     </header>
 
     <main class="christmas-theme">
-        <h1 class="christmas-title">圣诞特别版</h1>
 
         <div class="categories">
             <button class="category-btn active" data-category="all">全部</button>
@@ -221,7 +215,6 @@
             <button class="category-btn" data-category="lowsugar">长辈蛋糕</button>
             <button class="category-btn" data-category="boy">男孩蛋糕</button>
             <button class="category-btn" data-category="girl">女孩蛋糕</button>
-            <button class="category-btn" data-category="diy">联系我们</button>
         </div>
 
         <div class="product-grid">
@@ -497,4 +490,3 @@
     </script>
 </body>
 </html>
-
