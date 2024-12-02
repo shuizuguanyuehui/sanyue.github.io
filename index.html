@@ -18,21 +18,6 @@
             position: relative;
         }
 
-        body::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(135deg, #ffecd2 25%, transparent 25%),
-                        linear-gradient(225deg, #ffecd2 25%, transparent 25%),
-                        linear-gradient(315deg, #ffecd2 25%, transparent 25%),
-                        linear-gradient(45deg, #ffecd2 25%, transparent 25%);
-            background-size: 100px 100px;
-            opacity: 0.3;
-            z-index: -1;
-        }
 
         header {
             background-color: darksalmon;
@@ -41,12 +26,6 @@
             z-index: 1;
         }
 
-        nav {
-            justify-content: space-between;
-            align-items: center;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
 
         nav h1 {
             font-size: 1.5rem;
@@ -182,9 +161,6 @@
             cursor: pointer;
         }
 
-        .christmas-theme {
-            position: relative;
-        }
 
         @media (max-width: 480px) {
             .product-grid {
